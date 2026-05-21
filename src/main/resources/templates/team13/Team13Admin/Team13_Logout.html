@@ -5,6 +5,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<div th:replace="~{team13/Team13Header/Team13_Header_Admin :: Admin_Header}"></div>
+	
 	<form method="post" th:action="@{/Team13_Admin_Logout}">
 	<h1>ログアウト確認</h1>
 		<h2>ログアウトしますか？</h2>

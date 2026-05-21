@@ -5,10 +5,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form method="post" th:action="@{/Team13_Admin_Home}">
-		<h1>ホーム画面</h1>
-		<p>ボールドパーカー</p>
-		<input type="submit" value="追加">
-</form>
+	
+	<div th:replace="~{team13/Team13Header/Team13_Header_Admin :: Admin_Header}"></div>
+		
+	<form method="post" th:action="@{/Team13_Admin_Home}">
+			<h1>ホーム画面</h1>
+			<p>ボールドパーカー</p>
+			<input type="submit" value="追加">
+	</form>
 </body>
 </html>
