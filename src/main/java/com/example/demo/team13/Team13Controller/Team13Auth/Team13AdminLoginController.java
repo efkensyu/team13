@@ -13,7 +13,7 @@ public class Team13AdminLoginController {
     }
     
     @PostMapping("/Team13_Admin_Login")
-    public String login2() {
+    public String sendlogin() {
         return "team13/Team13Admin/Team13_Home";
     }
     
