@@ -9,5 +9,5 @@ import com.example.demo.team13.Team13Entity.Team13CartShohin;
 
 @Repository
 public interface Team13CartShohinRepository extends JpaRepository<Team13CartShohin, String> {
-	public List<Team13CartShohin> findAll(String cart_shohin_nm);
+	public List<Team13CartShohin> findAll();
 }

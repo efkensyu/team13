@@ -8,6 +8,6 @@ import com.example.demo.team13.Team13Repository.Team13CartShohinRepository;
 public class Team13CartService {
 	private  Team13CartShohinRepository repository;
 	public List<Team13CartShohin> findAll(String shain_id){
-		return repository.findAll(shain_id);
+		return repository.findAll();
 	}
 }
