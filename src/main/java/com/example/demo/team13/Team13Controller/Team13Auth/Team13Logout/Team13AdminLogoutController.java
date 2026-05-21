@@ -12,9 +12,13 @@ public class Team13AdminLogoutController {
         return "team13/Team13Admin/Team13_Logout";
     }
     
-    @PostMapping("/Team13_Admin_Logout")
+    @PostMapping(value="/Team13_Admin_Logout",params="back")
+    public String backlogout() {
+        return "team13/Team13Admin/Team13_Admin_Profile";
+    }
+    
+    @PostMapping(value="/Team13_Admin_Logout",params="logout")
     public String sendlogout() {
         return "team13/Team13Admin/Team13_Login";
     }
-    
 }
