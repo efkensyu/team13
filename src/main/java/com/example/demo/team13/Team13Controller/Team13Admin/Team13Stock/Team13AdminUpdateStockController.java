@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
-public class Team13AdminHomeController {
+public class Team13AdminUpdateStockController {
 	
 	@GetMapping("/Team13_Admin_Home")
 	public String add(){
