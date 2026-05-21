@@ -16,7 +16,7 @@ public class Team13CartController {
 		return new User();
 	}
 
-	@GetMapping("/CartIndex")
+	@GetMapping("/Team13_CartIndex")
 	public String index(Model model) {
 		
 		return "team13/Team13General/Team13_Cart";
