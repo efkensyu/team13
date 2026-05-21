@@ -7,11 +7,15 @@ import jakarta.persistence.Table;
 import lombok.Data;
 
 @Entity
-@Table(name="cart_shohin_tbl")
+@Table(name="team13_shain_tbl")
 
 @Data
-public class Team13CartShohin {
+public class Team13Shain {
 	@Id
-	private String cart_shohin_id;
 	private String shain_id;
+	private String shain_nm;
+	private String shain_adress;
+	private String shain_email;
+	private String shain_tell;
+	
 }

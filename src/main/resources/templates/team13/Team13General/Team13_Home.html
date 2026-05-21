@@ -11,5 +11,15 @@
 	<img src="/ピクチャ/ボルT.png" alt="表示できません" width="100" height="150" title="ボルT">
 		<p><input type="submit" value="追加"></p>
 </form>
+
+<table border="1" th:each="data:${shainData}">
+	<tr th:object="${data}">
+		<td th:text="*{shain_id}"></td>
+		<td th:text="*{shain_nm}"></td>
+		<td th:text="*{shain_adress}"></td>
+		<td th:text="*{shain_email}"></td>
+		<td th:text="*{shain_tell}"></td>
+	</tr>
+</table>
 </body>
 </html>
