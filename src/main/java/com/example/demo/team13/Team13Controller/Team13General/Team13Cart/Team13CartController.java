@@ -1,20 +1,16 @@
 package com.example.demo.team13.Team13Controller.Team13General.Team13Cart;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import lombok.RequiredArgsConstructor;
+
 @SessionAttributes("User")
 @Controller
+@RequiredArgsConstructor
 public class Team13CartController {
-//	private final Team13CartService team13CartService;
 	
-	@ModelAttribute("User")
-	public User setupSession() {
-		return new User();
-	}
-
 	@PostMapping(value="/Team13_CartIndex" ,params="confirm")
 	
 	public String pay_complete(){
@@ -26,7 +22,7 @@ public class Team13CartController {
 	@PostMapping(value="/Team13_CartIndex" ,params="back")
 	
 	public String back_cart(){
-		
+	
 		return "team13/Team13General/Team13_Cart";
 		
 	}
