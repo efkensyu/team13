@@ -1,4 +1,4 @@
-package com.example.demo.team13.Team13Controller.Team13Auth;
+package com.example.demo.team13.Team13Controller.Team13Auth.Team13Login;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
