@@ -5,15 +5,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-	
+		
 	<div th:replace="~{team13/Team13Header/Team13_Header_General :: General_Header}">
 			
 	</div>
-	
-	<form method="post" th:action="@{/Team13_General_Logout}">
-	<h1>ログアウト確認</h1>
-		<h2>ログアウトしますか？</h2>
-	<input type="submit" value="ログアウト">
-	</form>
+		<h1>ユーザ情報</h1>
+		<a th:href="@{/Team13_General_Logout}">ログアウト</a>
 </body>
 </html>
