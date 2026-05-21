@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class Team13_Admin_Home_Controller {
 	
 	@GetMapping("/Team13_Admin_Home")
-	public String index(){
+	public String add(){
 		
 	 return "team13/Team13Admin/Team13_Home";
 	 

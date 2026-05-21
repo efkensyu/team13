@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class Team13_General_Home_Controller {
 	
 	@GetMapping("/Team13_General_Home")
-	public String index(){
+	public String add(){
 		
 	 return "team13/Team13General/Team13_Home";
 	 
@@ -17,7 +17,7 @@ public class Team13_General_Home_Controller {
 	@PostMapping("/Team13_General_Home")
 	public String send(){
 	
-    return "team13/Team13General/Team13_Home";
+    return "team13/Team13General/Team13_Cart";
  
 }
 
