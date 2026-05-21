@@ -7,4 +7,5 @@ CREATE TABLE team13_shain_tbl(
 	SHAIN_TELL VARCHAR(20),	
 	PRIMARY KEY(SHAIN_ID)
 	);
+	
 
