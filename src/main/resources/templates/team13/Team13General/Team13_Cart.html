@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.ofg">
+<head>
+<title>home</title>
+</head>
+
+<body>
+<p>カート内商品</p>
+
+<table>
+	<tr th:each="data:${cartData}">
+		<td th:text="*{cart_shohin_nm}"></td>
+		<td th:text="*{cart_shohin_photo}"></td>
+		<td th:text="*{cart_shohin_price}"></td>
+	</tr>
+	
+	
+</table>
+<form>
+	<input type="submit"value="購入">
+</form>
+</body>
+	
+</html>
