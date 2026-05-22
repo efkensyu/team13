@@ -39,8 +39,7 @@ public class Team13GeneralLoginController {
     }
     
     @PostMapping("/Team13_General_Login")
-    public String send(@ModelAttribute Team13Shain team13shain,Model model,BindingResult result) {
-    	
+    public String send(@ModelAttribute Team13Shain team13shain,Model model,BindingResult result) {	
     	smartValidator.validate(team13shain, result);
     	if(result.hasErrors()) {
     		return "team13/Team13General/Team13_Login";
