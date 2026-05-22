@@ -13,20 +13,21 @@ import com.example.demo.team13.Team13Service.Team13General.Team13Cart.Team13Make
 
 @Controller
 
-public class Team13PayCompleteController {
+public class Team13CartCompleteController {
 	@Autowired
 	public Team13MakeRecipt rec;
 	@Autowired 
 	private Team13CartInfo cartInfo;
-	@GetMapping("/Team13_Pay_Complete")
+	@GetMapping("/Team13_Cart_Complete")
 	public String index() {
 		
-		return "team13/Team13General/Team13_Pay_Complete";
+		return "team13/Team13General/Team13_Cart_Complete";
 	}
 	
-	@PostMapping("/Team13_Pay_Complete")
+	@PostMapping("/Team13_Cart_Complete")
 	public void recipit(HttpServletResponse response) throws IOException {
 			rec.makeXSSF(response,cartInfo);
+			
 	}
 	
 }
