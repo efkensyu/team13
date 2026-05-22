@@ -39,9 +39,13 @@ public class Team13MakeRecipt {
 		Cell cell_Nicesoul = row_Nicesoul.createCell(CellReference.convertColStringToIndex("G"));
 		cell_Nicesoul.setCellValue("NiceSoul!!!!");
 		
-//		for(CartInfo n : cartInfo) {
-//			
-//		}
+		Row row_loop;
+		for(int i = 0; i < 10; i ++) {
+			row_loop = sheet_.createRow(i + 4);
+			Cell cell_loop = row_loop.createCell(CellReference.convertColStringToIndex("C"));
+			cell_loop.setCellValue(i);
+		}
+		
 		//---------------------------------------------------------------------------------------------
 		//ダウンロード。
 		
