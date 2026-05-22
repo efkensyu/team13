@@ -13,7 +13,7 @@ public class Team13GeneralLoginController {
         return "team13/Team13General/Team13_Login";
     }
     
-    @PostMapping("/Team13_General_Login")
+    @PostMapping("/Team13_General_Home")
     public String sendlogin() {
     	
 //    	ここに実処理呼び出し
