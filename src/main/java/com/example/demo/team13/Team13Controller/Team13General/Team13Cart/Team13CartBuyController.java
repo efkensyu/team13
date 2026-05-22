@@ -16,7 +16,6 @@ public class Team13CartBuyController {
 	public String pay_complete(){
 		
 		return "team13/Team13General/Team13_Pay_Complete";
-		
 	}
 	
 	@PostMapping(value="/Team13_Buy_Complete" ,params="back")

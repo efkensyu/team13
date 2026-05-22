@@ -13,7 +13,8 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.util.CellReference;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
+import org.springframework.stereotype.Service;
+@Service
 public class Team13MakeRecipt {
 //	public HttpServletResponse response;
 	
@@ -21,14 +22,16 @@ public class Team13MakeRecipt {
 		Workbook workbook_ = new XSSFWorkbook();
 		
 		Sheet sheet_ = workbook_.createSheet("領収書");
-		
+//		以下例示コード
 		//createRow()に渡すのはインデックス。
 		//1行目なら0、2行目なら1。
-		Row row_ = sheet_.createRow(1);
-		
 		//2行目のB列、つまりB2セルに値がセットされる。
+		Row row_ = sheet_.createRow(1);
 		Cell cell_ = row_.createCell(CellReference.convertColStringToIndex("B"));
+//		セルに値をセット
 		cell_.setCellValue(word);
+//		不要になったら消すこと！
+		
 		
 		
 		//---------------------------------------------------------------------------------------------

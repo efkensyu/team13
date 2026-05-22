@@ -12,9 +12,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import com.example.demo.team13.Team13Service.Team13General.Team13Cart.Team13MakeRecipt;
 
 @Controller
+
 public class Team13PayCompleteController {
 	@Autowired
-	public  HttpServletResponse response;
+	public Team13MakeRecipt rec;
 	@GetMapping("/Team13_Pay_Complete")
 	public String index() {
 		
@@ -22,17 +23,8 @@ public class Team13PayCompleteController {
 	}
 	
 	@PostMapping("/Team13_Pay_Complete")
-	public String recipit() throws IOException {
-		try {
-			Team13MakeRecipt rec = new Team13MakeRecipt();
+	public void recipit(HttpServletResponse response) throws IOException {
 			rec.makeXSSF(response,"a");
-		} catch(IOException e) {
-			return "Team13_Error";
-		} finally {
-			System.out.println("判定");
-		}
-		
-		return "team13/Team13General/Team13_Pay_Complete";
 	}
 	
 }
