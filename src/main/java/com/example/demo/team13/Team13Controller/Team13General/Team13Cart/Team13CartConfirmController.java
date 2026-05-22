@@ -9,17 +9,17 @@ import lombok.RequiredArgsConstructor;
 @SessionAttributes("User")
 @Controller
 @RequiredArgsConstructor
-public class Team13CartBuyController {
+public class Team13CartConfirmController {
 	
-	@PostMapping(value="/Team13_Buy_Complete" ,params="complete")
+	@PostMapping(value="/Team13_Cart_Confirm" ,params="complete")
 	
 	public String pay_complete(){
 		
-		return "team13/Team13General/Team13_Pay_Complete";
+		return "team13/Team13General/Team13_Cart_Complete";
 		
 	}
 	
-	@PostMapping(value="/Team13_Buy_Complete" ,params="back")
+	@PostMapping(value="/Team13_Cart_Confirm" ,params="back")
 	
 	public String back_cart(){
 	

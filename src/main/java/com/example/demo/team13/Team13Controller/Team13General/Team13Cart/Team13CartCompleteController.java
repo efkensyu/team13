@@ -11,16 +11,16 @@ import org.springframework.web.bind.annotation.PostMapping;
 import com.example.demo.team13.Team13Service.Team13General.Team13Cart.MakeRecipt;
 
 @Controller
-public class Team13PayCompleteController {
+public class Team13CartCompleteController {
 	public  HttpServletResponse responce;
-	@GetMapping("/Team13_Pay_Complete")
+	@GetMapping("/Team13_Cart_Complete")
 	public String index() {
 		
-		return "team13/Team13General/Team13_Pay_Complete";
+		return "team13/Team13General/Team13_Cart_Complete";
 	}
 	
 	@SuppressWarnings("finally")
-	@PostMapping("/Team13_Pay_Complete")
+	@PostMapping("/Team13_Cart_Complete")
 	public String recipit() throws IOException {
 		try {
 			MakeRecipt rec = new MakeRecipt();
@@ -28,7 +28,7 @@ public class Team13PayCompleteController {
 		} catch(IOException e) {
 			System.out.println();
 		} finally {
-			return "team13/Team13General/Team13_Pay_Complete";
+			return "team13/Team13General/Team13_General_Home";
 		}
 	}
 	
