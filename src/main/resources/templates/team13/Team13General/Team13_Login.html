@@ -1,16 +1,25 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.ofg">
+<link rel="stylesheet" th:href="@{/css/Team13General.css}">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
-	<form method="post" th:action="@{/Team13_General_Login}">
-		<h1>ログイン画面(ユーザ)</h1>
-		<p>ログイン情報を入力してください</p>
-		<p>社員ID:<input type="text" name="shain_id"></p>
-		<p>メールアドレス:<input type="text" name="mail_adress"></p>
-		<input type="submit" value="ログイン">
-	</form>
+<body class="login">
+	<div class="center-box">
+		
+		<form method="post" th:action="@{/Team13_General_Login}">
+			
+			<h1 class="login_title">ユーザログイン</h1>
+			
+			<p>ログイン情報を入力してください</p>
+			<p>社員ID:<input type="text" name="shain_id"></p>
+			<p>メールアドレス:<input type="text" name="mail_adress"></p>
+			
+			<button class="bold_btn">ログイン</button>
+			
+		</form>
+		
+	</div>
 </body>
 </html>

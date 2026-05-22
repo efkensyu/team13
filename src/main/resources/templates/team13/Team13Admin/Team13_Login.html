@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.ofg">
+<link rel="stylesheet" th:href="@{/css/Team13Admin.css}">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
+<body class="login">
+	<div class="center-box">
 	
-	<form method="post" th:action="@{/Team13_Admin_Login}">
-		<h1>ログイン画面(管理者)</h1>
-		<p>管理社情報を入力してください</p>
-		<p>認証ID:<input type="text" name="admin_id"></p>
-		<p>パスワード:<input type="password" name="admin_password"></p>
-		<input type="submit" value="ログイン">
-	</form>
+		<form method="post" th:action="@{/Team13_Admin_Login}">
+			
+			<h1 class="login_title">管理者ログイン</h1>
+			
+			<p>管理社情報を入力してください</p>
+			<p>認証ID:<input type="text" name="admin_id"></p>
+			<p>パスワード:<input type="password" name="admin_password"></p>
+			
+			<button class="bold_btn">ログイン</button>
+	
+		</form>
+	</div>
 </body>
 </html>

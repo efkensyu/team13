@@ -6,18 +6,28 @@
 </head>
 <body>
 
-<div th:replace="~{team13/Team13Header/Team13_Header_General :: General_Header}"></div>
-<form method="post" th:action="@{/Team13_General_Home}">
-	<h3>商品一覧</h3>
-<br>
-	<img th:src="@{/images/ボルT.png}" alt="表示できません" width="100" height="150" title="ボルT">
-<br>
-	<img src="../画像/ボルシャツ.jpg" alt="表示できません" width="100" height="150" title="ボルシャツ">
-	<br>	
-	<img src="../画像/ボルパカ.jpg" alt="表示できません" width="100" height="150" title="ボルパカ">
-	<img src="../画像/社章.jpg" alt="表示できません" width="100" height="150" title="社章">
-	<img src="../画像/ボールドペン.jpg" alt="表示できません" width="100" height="150" title="ボールドペン">
-		<p><input type="submit" value="追加"></p>
-</form>
+	<div th:replace="~{team13/Team13Header/Team13_Header_General :: General_Header}"></div>
+
+	<form method="post" th:action="@{/Team13_General_Home}">
+		<h3>商品一覧</h3>
+		
+			<img th:src="@{/images/ボルT.png}" alt="表示できません" style="max-width: 100%; height: auto;" title="ボルT">
+			<input type="submit" value="追加">
+			
+			<img th:src="@{/images/ボールドペン.png}" style="max-width: 100%; height: auto;" title="ボールドペン">
+			<input type="submit" value="追加">
+			
+			<img th:src="@{/images/ボルシャツ.png}" alt="表示できません" style="max-width: 100%; height: auto;" title="ボルシャツ">
+			<input type="submit" value="追加">
+		<br>	
+			<img th:src="@{/images/ボルパカ.png}" alt="表示できません" style="max-width: 100%; height: auto;" title="ボルパカ">
+			<input type="submit" value="追加">
+			
+			<img th:src="@{/images/社章.png}" alt="表示できません" style="max-width: 100%; height: auto;" title="社章">
+			<input type="submit" value="追加">
+		<br>
+				
+		
+	</form>
 </body>
 </html>
