@@ -12,5 +12,8 @@
 	
 		<h3>購入完了しました！ないっそー</h3>
 		<a th:href="@{/Team13_General_Home}">ホームへ戻る</a>
+	<form method="post" th:action="@{/Team13_Pay_Complete}">
+		<input type="submit" value="領収書作成"/>
+	</form>
 </body>
 </html>

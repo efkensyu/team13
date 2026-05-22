@@ -11,7 +11,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class Team13CartBuyController {
 	
-	@PostMapping(value="/Team13_CartIndex" ,params="complete")
+	@PostMapping(value="/Team13_Buy_Complete" ,params="complete")
 	
 	public String pay_complete(){
 		
@@ -19,7 +19,7 @@ public class Team13CartBuyController {
 		
 	}
 	
-	@PostMapping(value="/Team13_CartIndex" ,params="back")
+	@PostMapping(value="/Team13_Buy_Complete" ,params="back")
 	
 	public String back_cart(){
 	
