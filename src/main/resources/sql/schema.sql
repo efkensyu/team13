@@ -10,7 +10,6 @@ CREATE TABLE team13_shain_tbl(
 	PRIMARY KEY(SHAIN_ID)
 	);
 	
-
 CREATE TABLE team13_shohin_tbl(
 	SHOHIN_ID CHAR(5),
 	SHOHIN_NM VARCHAR2(30) NOT NULL,
@@ -111,6 +110,3 @@ CREATE TABLE team13_card_info_tbl(
 
         REFERENCES team13_shain_tbl(SHAIN_ID)
 );
-
-
-
