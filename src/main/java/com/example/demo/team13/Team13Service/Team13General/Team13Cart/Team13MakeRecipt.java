@@ -14,12 +14,13 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.util.CellReference;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-public class MakeRecipt {
+public class Team13MakeRecipt {
+//	public HttpServletResponse response;
 	
-	public void makeXSSF(HttpServletResponse response)throws IOException{			//エクセルファイル生成。
+	public void makeXSSF(HttpServletResponse response,String word)throws IOException{			//エクセルファイル生成。
 		Workbook workbook_ = new XSSFWorkbook();
 		
-		Sheet sheet_ = workbook_.createSheet("ふーたお");
+		Sheet sheet_ = workbook_.createSheet("領収書");
 		
 		//createRow()に渡すのはインデックス。
 		//1行目なら0、2行目なら1。
@@ -27,23 +28,23 @@ public class MakeRecipt {
 		
 		//2行目のB列、つまりB2セルに値がセットされる。
 		Cell cell_ = row_.createCell(CellReference.convertColStringToIndex("B"));
-		cell_.setCellValue("私とお茶しない？");
+		cell_.setCellValue(word);
 		
 		
 		//---------------------------------------------------------------------------------------------
 		//ダウンロード。
 		
 		//ファイル名に2バイト文字を使えるように一工夫。
-		response.addHeader(
-				"Content-Disposition", 
-				"attachment; filename*=UTF-8''" + URLEncoder.encode("胡桃.xlsx", StandardCharsets.UTF_8.name()));
-		
-		ServletOutputStream stream_ = response.getOutputStream();
-		workbook_.write(stream_);
-		stream_.close();
-		
-		workbook_.close();
-		
+		 response.addHeader(
+					"Content-Disposition", 
+					"attachment; filename*=UTF-8''" + URLEncoder.encode("領収書.xlsx", StandardCharsets.UTF_8.name()));
+			
+			ServletOutputStream stream_ = response.getOutputStream();
+			workbook_.write(stream_);
+			stream_.close();
+			
+			workbook_.close();
+			
 		
 		//---------------------------------------------------------------------------------------------
 		//responseをいじっているので、『return "/index";』みたいなことをしても、ページ移動しません。
