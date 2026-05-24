@@ -16,7 +16,7 @@ import com.example.demo.team13.Team13Service.Team13Auth.Team13GeneralLoginServic
 
 @Controller
 public class Team13GeneralLoginController {
-	@Autowired Team13LoginSession team13LoginSession;
+	@Autowired Team13UserInfoSession team13userInfoSession;
 	
 	private Team13GeneralLoginService shainService;
 	private SmartValidator smartValidator;

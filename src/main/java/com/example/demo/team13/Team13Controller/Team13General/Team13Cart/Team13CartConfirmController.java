@@ -21,7 +21,7 @@ public class Team13CartConfirmController {
 	
 	public String back_cart(){
 	
-		return "team13/Team13General/Team13_Cart";
+		return "team13/Team13General/Team13_Home";
 		
 	}
 }

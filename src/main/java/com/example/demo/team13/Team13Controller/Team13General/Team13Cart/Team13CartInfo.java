@@ -4,11 +4,11 @@ import org.springframework.stereotype.Component;
 
 import lombok.Data;
 
-@Data
 @Component
+@Data
 public class Team13CartInfo {
 	private String shohin_id;
-	private String shohin_nm;
-	private String shohin_num;
+	private Integer shohin_nm;
+	private Integer shohin_num;
 	private String shohin_price;
 }
