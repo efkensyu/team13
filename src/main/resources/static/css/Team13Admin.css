@@ -66,3 +66,47 @@ body.login{
 .bold_btn:hover::before {
     width: 100%;
 }
+
+/* ヘッダー全体 */
+.bold_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #000ac4;
+    color: white;
+    height: 100px;
+	font-style: bold;
+}
+
+
+/* 右側リンクの並び */
+.header_right {
+    display: flex;
+    gap: 2em;
+}
+
+/* リンクを白くする（フォントサイズは触らない） */
+.header_right a {
+    color: white;          /* ← これだけで白くなる */
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 4px;
+    font-weight: 400;
+}
+
+/* ホバー時の下線アニメーション */
+.header_right a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+.header_right a:hover::after {
+    width: 100%;
+}

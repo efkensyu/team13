@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.ofg">
+<link rel="stylesheet" th:href="@{/css/Team13Admin.css}">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -7,7 +8,7 @@
 <body>
 	
 
-	<div th:replace="~{team13/Team13Header/Team13_Header_Admin :: Admin_Header}"></div>
+	<div class="bold_header" th:replace="~{team13/Team13Header/Team13_Header_Admin :: Admin_Header}"></div>
 		
 	<form method="post" th:action="@{/Team13_Admin_Home}">
 			<h1>ホーム画面</h1>
