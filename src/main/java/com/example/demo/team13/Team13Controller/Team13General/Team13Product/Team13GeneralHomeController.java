@@ -34,7 +34,7 @@ public class Team13GeneralHomeController {
 	public String send(@RequestParam("shohin_id") String shohin_id, @RequestParam("count") int count,Model model){
 		
 		Team13Shohin cartItem = team13GeneralHomeService.findById(shohin_id);
-		
+		System.out.println(cartItem);
 	    model.addAttribute("cartItem",cartItem);
 	    
 	    System.out.println("商品情報を送る");
@@ -46,8 +46,6 @@ public class Team13GeneralHomeController {
     return "team13/Team13General/Team13_Cart";
 
  
-}
-	
-
+	}
 
 }

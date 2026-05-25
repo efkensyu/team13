@@ -8,10 +8,15 @@
 	<div th:replace="~{team13/Team13Header/Team13_Header_General :: General_Header}">
 			
 		</div>
-	<form method="post" th:action="@{/Team13_Cart_Confirm}">
 			<h1>カート商品確認画面</h1>
-			<input type="submit" name="back" value="戻る">
-			<input type="submit" name="complete"value="完了">
+
+	<form>
+		<button type="submit" name="back" th:formaction="@{/Team13_Cart}" formmethod="post" value="shohin_id">
+			戻る
+		</button>
+		<button type="submit" name="complete" th:formaction="@{/Team13_Cart_Complete}" formmethod="post" value="shohin_id">
+			完了
+		</button>
 	</form>
 </body>
 </html>
