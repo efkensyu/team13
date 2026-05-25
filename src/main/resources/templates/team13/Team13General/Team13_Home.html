@@ -12,39 +12,10 @@
 		<h3>商品一覧</h3>
 		
 
-<!--		<div th:each="item : ${shohinData}">-->
-	
-
-<!--			<img th:if="${shohinData[0].shohin_id == 'A0001'}" th:src="@{/images/ボルT.png}" alt="表示できません" style="max-width: 100%; height: auto;" title="ボルT">-->
-				
-<!--			<img th:if="${shohinData[1].shohin_id == 'A0002'}" th:src="@{/images/ボールドペン.png}" alt="表示できません" style="max-width: 100%; height: auto;" title="ボールドペン">-->
-				
-<!--			<img th:if="${shohinData[2].shohin_id == 'A0003'}" th:src="@{/images/ボルシャツ.png}" alt="表示できません" style="max-width: 100%; height: auto;" title="ボルシャツ">-->
-				
-<!--			<img th:if="${shohinData[3].shohin_id == 'A0004'}" th:src="@{/images/ボルパカ.png}" alt="表示できません" style="max-width: 100%; height: auto;" title="ボルパカ">-->
-				
-<!--			<img th:if="${shohinData[4].shohin_id == 'A0005'}" th:src="@{/images/社章.png}" alt="表示できません" style="max-width: 100%; height: auto;" title="社章">-->
-				
-<!--			<th:block th:each="item : ${shohinData}">-->
-			
-<!--		    <p th:text="${item.shohin_id}"></p>-->
-
-<!--		    <p th:text="${item.shohin_nm}"></p>-->
-
-<!--		    <p th:text="${item.shohin_price}"></p>-->
-
-<!--		    <button type="submit"-->
-<!--		            name="shohin_id"-->
-<!--		            th:value="${item.shohin_id}">-->
-<!--		        追加-->
-<!--		    </button>-->
-<!--			</th:block>-->
-<!--		</div>-->
-		
 			<img th:if="${shohinData[0].shohin_id == 'A0001'}" th:src="@{/images/ボルT.png}" alt="表示できません" style="max-width: 100%; height: auto;" title="ボルT">
 			<span>ボルT 965円</span>
+			<input type="number" name="count">
 			<button type="submit" name="shohin_id" th:value="${shohinData[0].shohin_id}">追加</button>
-			<input type="text">
 			
 			<img th:if="${shohinData[1].shohin_id == 'A0002'}" th:src="@{/images/ボールドペン.png}" style="max-width: 100%; height: auto;" title="ボールドペン">
 			<span>ボールドペン 816円</span>

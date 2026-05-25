@@ -11,12 +11,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.example.demo.team13.Team13Entity.Team13Shohin;
 import com.example.demo.team13.Team13Service.Team13General.Team13Product.Team13GeneralHomeService;
 
+import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
 @Controller
 @RequiredArgsConstructor
+@Data
 public class Team13GeneralHomeController {
+	
 	private final Team13GeneralHomeService team13GeneralHomeService;
+	
+	
 	@GetMapping("/Team13_General_Home")
 	public String add(Model model){
 	 List<Team13Shohin> shohinData = team13GeneralHomeService.findAll();
@@ -26,18 +31,23 @@ public class Team13GeneralHomeController {
 	}
 	
 	@PostMapping(value="/Team13_Cart" ,params="shohin_id")
-//  @PostMapping(value="/Team13_General_Home")
-	public String send(@RequestParam("shohin_id") String shohin_id, Model model){
+	public String send(@RequestParam("shohin_id") String shohin_id, @RequestParam("count") int count,Model model){
 		
 		Team13Shohin cartItem = team13GeneralHomeService.findById(shohin_id);
 		
 	    model.addAttribute("cartItem",cartItem);
+	    
+	    System.out.println("商品情報を送る");
+	    
+	    model.addAttribute("count",count);
 		
-		System.out.println("商品情報を送る");
+		System.out.println("商品個数を送る");
 	
     return "team13/Team13General/Team13_Cart";
 
  
 }
+	
+
 
 }
