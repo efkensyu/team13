@@ -24,7 +24,14 @@ public class Team13CartCompleteController {
 		return "team13/Team13General/Team13_Cart_Complete";
 	}
 	
-	@PostMapping("/Team13_Cart_Complete")
+	@PostMapping(value="/Team13_Cart_Complete" ,params="complete")
+	public String pay_complete(){
+		
+		return "team13/Team13General/Team13_Cart_Complete";
+		
+	}
+	
+	@PostMapping("/Team13_Recipt")
 	public void recipit(HttpServletResponse response) throws IOException {
 			rec.makeXSSF(response,cartInfo);
 			

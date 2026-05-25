@@ -42,8 +42,10 @@ public class Team13MakeRecipt {
 		Row row_loop;
 		for(int i = 0; i < 10; i ++) {
 			row_loop = sheet_.createRow(i + 4);
-			Cell cell_loop = row_loop.createCell(CellReference.convertColStringToIndex("C"));
-			cell_loop.setCellValue(i);
+			Cell cell_shohin_nm = row_loop.createCell(CellReference.convertColStringToIndex("C"));
+			cell_shohin_nm.setCellValue(i);
+			Cell cell_shohin_Info = row_loop.createCell(CellReference.convertColStringToIndex("G"));
+			cell_shohin_Info.setCellValue(i);
 		}
 		
 		//---------------------------------------------------------------------------------------------

@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 
 import com.example.demo.team13.Team13Entity.Team13Shohin;
 import com.example.demo.team13.Team13Service.Team13General.Team13Product.Team13GeneralHomeService;
@@ -30,14 +29,14 @@ public class Team13GeneralHomeController {
 	
 	
 //	@PostMapping(value="/Team13_General_Home", params="shohin_id")
-	@PostMapping("/Team13_General_Home")
-	public String send(Model model){
-		
-		System.out.println("商品情報を送る");
-	
-    return "team13/Team13General/Team13_Cart";
+//	@PostMapping("/Team13_General_Home")
+//	public String send(Model model){
+//		
+//		System.out.println("商品情報を送る");
+//	
+//    return "team13/Team13General/Team13_Cart";
  
-}
+//}
 	
 	
 }
