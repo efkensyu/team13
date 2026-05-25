@@ -17,7 +17,7 @@ public class Team13CartConfirmController {
 		
 	}
 	
-	@PostMapping(value="/Team13_Cart_Confirm" ,params="back")
+	@PostMapping(value="/Team13_Cart" ,params="back")
 	
 	public String back_cart(){
 	

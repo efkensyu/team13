@@ -7,13 +7,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 public class Team13CartController {
 	
-	@PostMapping(value="/Team13_Buy" ,params="confirm")
+	@PostMapping(value="/Team13_Cart_Confirm")
 	public String confirm_buy(){
 		return "team13/Team13General/Team13_Cart_Confirm";
-	}
-	
-	@PostMapping(value="/Team13_Buy" ,params="back")
-	public String back_home(){
-		return "team13/Team13General/Team13_Home";
 	}
 }

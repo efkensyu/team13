@@ -26,11 +26,10 @@ public class Team13GeneralHomeController {
 	}
 	
 	@PostMapping(value="/Team13_Cart" ,params="shohin_id")
-//  @PostMapping(value="/Team13_General_Home")
 	public String send(@RequestParam("shohin_id") String shohin_id, Model model){
 		
 		Team13Shohin cartItem = team13GeneralHomeService.findById(shohin_id);
-		
+		System.out.println(cartItem);
 	    model.addAttribute("cartItem",cartItem);
 		
 		System.out.println("商品情報を送る");
