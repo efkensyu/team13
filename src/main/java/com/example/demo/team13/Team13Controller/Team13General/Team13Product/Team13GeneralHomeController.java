@@ -6,28 +6,37 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
-import com.example.demo.team13.Team13Entity.Team13Shain;
-import com.example.demo.team13.Team13Service.Team13General.Team13Auth.Team13ShainService;
+import com.example.demo.team13.Team13Entity.Team13Shohin;
+import com.example.demo.team13.Team13Service.Team13General.Team13Product.Team13GeneralHomeService;
 
 import lombok.RequiredArgsConstructor;
 
 @Controller
 @RequiredArgsConstructor
 public class Team13GeneralHomeController {
-	private final Team13ShainService team13ShainService;
+	private final Team13GeneralHomeService team13GeneralHomeService;
 	@GetMapping("/Team13_General_Home")
 	public String add(Model model){
-	 List<Team13Shain> shainData = team13ShainService.findAll();
-	 model.addAttribute("shainData",shainData);
+	 List<Team13Shohin> shohinData = team13GeneralHomeService.findAll();
+	 model.addAttribute("shainData",shohinData);
 	 return "team13/Team13General/Team13_Home";
 	 
 	}
 	
-	@PostMapping("/Team13_General_Home")
-	public String send(){
+	@PostMapping(value="/Team13_Cart" ,params="shohin_id")
+//  @PostMapping(value="/Team13_General_Home")
+	public String send(@RequestParam("shohin_id") String shohin_id, Model model){
+		
+		Team13Shohin cartItem = team13GeneralHomeService.findById(shohin_id);
+		
+	    model.addAttribute("cartItem",cartItem);
+		
+		System.out.println("商品情報を送る");
 	
-    return "redirect:/Team13_Buy";
+    return "team13/Team13General/Team13_Cart";
+
  
 }
 
