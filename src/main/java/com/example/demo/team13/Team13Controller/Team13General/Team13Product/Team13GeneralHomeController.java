@@ -20,7 +20,7 @@ public class Team13GeneralHomeController {
 	@GetMapping("/Team13_General_Home")
 	public String add(Model model){
 	 List<Team13Shohin> shohinData = team13GeneralHomeService.findAll();
-	 model.addAttribute("shainData",shohinData);
+	 model.addAttribute("shohinData",shohinData);
 	 return "team13/Team13General/Team13_Home";
 	 
 	}
