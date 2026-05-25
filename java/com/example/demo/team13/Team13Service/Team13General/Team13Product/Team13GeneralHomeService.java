@@ -19,12 +19,11 @@ public class Team13GeneralHomeService {
 		 return repository.findAll();
 	}
 	
-	public Team13Shohin findById(String shohin_id) {
+	public void addCart(String shohin_id) {
 		
-		return repository.findById(shohin_id).orElse(null);
+		
 		
 	}
 	 
+
 }
-
-
