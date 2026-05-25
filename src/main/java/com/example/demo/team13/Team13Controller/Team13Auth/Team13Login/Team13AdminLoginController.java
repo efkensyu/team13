@@ -59,7 +59,7 @@ public class Team13AdminLoginController {
             Team13Admin admin = adminData.get();
 
            
-            team13LoginSession.setShainId(admin.getKanriId());
+            team13LoginSession.setShain_id(admin.getKanriId());
 //            team13LoginSession.setShainName(admin.getKanriNm());
         }
 

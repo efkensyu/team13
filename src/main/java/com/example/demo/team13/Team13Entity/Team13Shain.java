@@ -8,9 +8,9 @@ import jakarta.validation.constraints.NotBlank;
 
 import lombok.Data;
 
-@Data
 @Entity
 @Table(name = "team13_shain_tbl")
+@Data
 public class Team13Shain {
     @Id
     @NotBlank(message="IDを入力してください")
