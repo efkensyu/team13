@@ -15,7 +15,7 @@ import org.apache.poi.ss.util.CellReference;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.stereotype.Service;
 @Service
-public class Team13MakeRecipt {
+public class Team13MakeReciptService {
 //	public HttpServletResponse response;
 	
 	public void makeXSSF(HttpServletResponse response,String word)throws IOException{			//エクセルファイル生成。

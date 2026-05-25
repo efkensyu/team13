@@ -8,13 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.example.demo.team13.Team13Service.Team13General.Team13Cart.Team13MakeRecipt;
+import com.example.demo.team13.Team13Service.Team13General.Team13Cart.Team13MakeReciptService;
 
 @Controller
 
 public class Team13CartCompleteController {
 	@Autowired
-	public Team13MakeRecipt rec;
+	public Team13MakeReciptService rec;
 	@Autowired 
 	private Team13CartInfo cartInfo;
 	@PostMapping("/Team13_Cart_Complete")

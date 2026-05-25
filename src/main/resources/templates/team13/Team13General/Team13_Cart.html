@@ -9,10 +9,11 @@
 		
 	</div>
 	<h1>カート商品画面</h1>
-	
-	<th:block th:each="data : ${cartItem}" th:object="${data}">
-		<p th:text="*{shohin_nm} + *{shohin_num} + 個"></p>
+	<p>こちらの商品を追加しました。</p>
+	<th:block th:object="${cartItem}">
+		<p th:text="*{shohin_nm} + ${count} + 個"></p>
 	</th:block>
+		
 	<form>
 		<button formmethod="get" th:formaction="@{/Team13_General_Home}">
 			戻る
