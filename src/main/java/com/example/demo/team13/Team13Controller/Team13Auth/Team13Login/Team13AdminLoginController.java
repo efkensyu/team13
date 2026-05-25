@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.example.demo.team13.Session.Team13LoginSession;
+import com.example.demo.team13.Session.Team13UserInfoSession;
 import com.example.demo.team13.Team13Entity.Team13Admin;
 import com.example.demo.team13.Team13Service.Team13Auth.Team13AdminLoginService;
 
 @Controller
 public class Team13AdminLoginController {
-	@Autowired Team13LoginSession team13LoginSession;
+	@Autowired Team13UserInfoSession team13UserInfoSession;
 	
 	private Team13AdminLoginService adminService;
 	private SmartValidator smartValidator;
@@ -60,7 +60,7 @@ public class Team13AdminLoginController {
             Team13Admin admin = adminData.get();
 
            
-            team13LoginSession.setShain_id(admin.getKanriId());
+            team13UserInfoSession.setShain_id(admin.getKanriId());
 //            team13LoginSession.setShainName(admin.getKanriNm());
         }
 
