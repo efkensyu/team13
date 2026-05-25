@@ -2,12 +2,14 @@ package com.example.demo.team13.Team13Controller.Team13General.Team13Product;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.example.demo.team13.Team13Controller.Team13Auth.Team13Login.Team13LoginSession;
 import com.example.demo.team13.Team13Entity.Team13Shohin;
 import com.example.demo.team13.Team13Service.Team13General.Team13Product.Team13GeneralHomeService;
 
@@ -18,7 +20,8 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @Data
 public class Team13GeneralHomeController {
-	
+	@Autowired
+	Team13LoginSession team13loginSession;
 	private final Team13GeneralHomeService team13GeneralHomeService;
 	
 	

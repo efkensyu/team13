@@ -54,10 +54,19 @@ public class Team13GeneralLoginController {
     	Optional<Team13Shain> shainData = shainService.getShainById(team13shain.getShainId());
     	
     	
+		Team13Shain shain = shainData.get();
+		
+		System.out.println(shainData);
+		// ★ セッションに DB の値を保存
+		team13LoginSession.setShain_id(shain.getShainId());
+		team13LoginSession.setShain_nm(shain.getShainNm());
+		team13LoginSession.setShain_adress(shain.getShainAdress());
+		team13LoginSession.setShain_email(shain.getShainEmail());
+		team13LoginSession.setShain_tell(shain.getShainTell());
 
     	String shain_id = team13shain.getShainId();
     	team13LoginSession.setShain_id(shain_id);
-		throw new RuntimeException("テスト用エラー");
+//		throw new RuntimeException("テスト用エラー");
 		
         return "redirect:Team13_General_Home";
     }
