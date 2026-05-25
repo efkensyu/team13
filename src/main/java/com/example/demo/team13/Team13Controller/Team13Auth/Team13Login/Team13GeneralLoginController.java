@@ -53,10 +53,24 @@ public class Team13GeneralLoginController {
     	Optional<Team13Shain> shainData = shainService.getShainById(team13shain.getShainId());
     	
     	
+<<<<<<<< HEAD:src/main/java/com/example/demo/team13/Team13Controller/Team13Auth/Team13Login/Team13GeneralLoginController.java
+========
+<<<<<<< HEAD:src/main/java/com/example/demo/team13/Team13Controller/Team13Auth/Team13Login/Team13GeneralLoginController.java
+>>>>>>>> fix-bug-1:java/com/example/demo/team13/Team13Controller/Team13Auth/Team13Login/Team13GeneralLoginController.java
  //   	問題なく照合出来たら
 //    	String shain_id = でIdを格納
 //		loginSession.setShainId(shain_id);
 //    	この文章を含めてコメントアウトを外し、不要な文章を消してください。
         return "redirect:/Team13_General_Home";
+<<<<<<<< HEAD:src/main/java/com/example/demo/team13/Team13Controller/Team13Auth/Team13Login/Team13GeneralLoginController.java
+========
+=======
+
+    	String shain_id = team13shain.getShainId();
+    	team13userInfoSession.setShainId(shain_id);
+   
+        return "redirect:Team13_General_Home";
+>>>>>>> c3fd29ede38437095e88a63669f6416d96946c1b:java/com/example/demo/team13/Team13Controller/Team13Auth/Team13Login/Team13GeneralLoginController.java
+>>>>>>>> fix-bug-1:java/com/example/demo/team13/Team13Controller/Team13Auth/Team13Login/Team13GeneralLoginController.java
     }
 }
