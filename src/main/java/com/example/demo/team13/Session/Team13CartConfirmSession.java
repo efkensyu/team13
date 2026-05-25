@@ -1,12 +1,14 @@
-package com.example.demo.team13.Team13Controller.Team13General.Team13Cart;
+package com.example.demo.team13.Session;
 
 import org.springframework.stereotype.Component;
+import org.springframework.web.context.annotation.SessionScope;
 
 import lombok.Data;
 
-@Data
 @Component
-public class Team13CartInfo {
+@SessionScope
+@Data
+public class Team13CartConfirmSession {
 	private String shohin_id;
 	private String shohin_nm;
 	private int shohin_num;

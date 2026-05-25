@@ -12,6 +12,7 @@
 	<p>こちらの商品を追加しました。</p>
 	<th:block th:object="${cartItem}">
 		<p th:text="*{shohin_nm} + ${count} + 個"></p>
+		<img th:src="@{${photo}}">
 	</th:block>
 		
 	<form>

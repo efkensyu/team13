@@ -15,12 +15,10 @@ import com.example.demo.team13.Team13Entity.Team13Shohin;
 import com.example.demo.team13.Team13Service.Team13General.Team13Cart.Team13AddCartService;
 import com.example.demo.team13.Team13Service.Team13General.Team13Product.Team13GeneralHomeService;
 
-import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
 @Controller
 @RequiredArgsConstructor
-@Data
 public class Team13GeneralHomeController {
 	@Autowired
 	Team13UserInfoSession team13UserInfoSession;
@@ -30,8 +28,13 @@ public class Team13GeneralHomeController {
 	@GetMapping("/Team13_General_Home")
 	public String add(Model model){
 	 List<Team13Shohin> shohinData = team13GeneralHomeService.findAll();
+//	 System.out.println(shohinData);
+	 for(int i = 0; i < shohinData.size(); i ++) {
+		 Team13Shohin shohin = shohinData.get(i);
+		 model.addAttribute("shohinData{" + i + "]",shohin);
+	 }
+//	 System.out.println(team13UserInfoSession);
 	 model.addAttribute("shohinData",shohinData);
-	 System.out.println(team13UserInfoSession);
 	 model.addAttribute("team13UserInfoSession",team13UserInfoSession);
 	 return "team13/Team13General/Team13_Home";
 	 
@@ -39,19 +42,15 @@ public class Team13GeneralHomeController {
 	
 	@PostMapping(value="/Team13_Cart" ,params="shohin_id")
 	public String send(@RequestParam("shohin_id") String shohin_id, @RequestParam("count") int count,Model model){
-		
 		Team13Shohin cartItem = team13GeneralHomeService.findById(shohin_id);
-		System.out.println(cartItem);
-		List<Team13CartInfo> cartList = team13AddCartService.addCartList(cartItem,count);
+		
+		List<Team13CartInfo> cartList = team13AddCartService.addCartList(cartItem,count,team13GeneralHomeService.selectPhoto(shohin_id));
+		
 		team13UserInfoSession.setCartInfo(cartList);
-		System.out.println(team13UserInfoSession);
 	    model.addAttribute("cartItem",cartItem);
-	    System.out.println("商品情報を送る");
-	    
 	    model.addAttribute("count",count);
-		
-		System.out.println("商品個数を送る");
-		
+	    model.addAttribute("photo", team13GeneralHomeService.selectPhoto(shohin_id));
+	    System.out.println(team13UserInfoSession.getCartInfo());
     return "team13/Team13General/Team13_Cart";
 	}
 
