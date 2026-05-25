@@ -59,7 +59,7 @@ public class Team13GeneralLoginController {
 		
 		System.out.println(shainData);
 		// ★ セッションに DB の値を保存
-		team13LoginSession.setShain_id(shain.getShainId());
+		team13LoginSession.setShain_id(shain.getShainId());	
 		team13LoginSession.setShain_nm(shain.getShainNm());
 		team13LoginSession.setShain_adress(shain.getShainAdress());
 		team13LoginSession.setShain_email(shain.getShainEmail());
