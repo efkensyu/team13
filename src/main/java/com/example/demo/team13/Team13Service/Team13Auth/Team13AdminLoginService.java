@@ -24,9 +24,8 @@ public class Team13AdminLoginService {
 		return false;
 	}
 	//社員情報取得
-	public Optional<Team13Admin> getAdminById(String kanri_id) {
+	public Optional<Team13Admin> getShainById(String kanri_id) {
 		return repository.findById(kanri_id);
 				
 	}
-	
 }

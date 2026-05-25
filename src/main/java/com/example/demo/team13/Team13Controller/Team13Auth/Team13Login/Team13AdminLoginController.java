@@ -16,52 +16,50 @@ import com.example.demo.team13.Team13Service.Team13Auth.Team13AdminLoginService;
 
 @Controller
 public class Team13AdminLoginController {
-
-    @Autowired
-    private Team13LoginSession team13LoginSession;
-
-    private final Team13AdminLoginService adminService;
-    private final SmartValidator smartValidator;
-
-    // コンストラクタインジェクション
-    public Team13AdminLoginController(Team13AdminLoginService adminService,
-                                      SmartValidator smartValidator) {
-        this.adminService = adminService;
-        this.smartValidator = smartValidator;
-    }
-
-    // 空の Team13Admin を Adminlogin 名でモデルに登録
-    @ModelAttribute("Adminlogin")
-    public Team13Admin setupLogin() {
-        return new Team13Admin();
-    }
-
-    @GetMapping("/Team13_Admin_Login")
-    public String login() {
-        return "team13/Team13Admin/Team13_Login";
-    }
-
+	@Autowired Team13LoginSession team13LoginSession;
+	
+	private Team13AdminLoginService adminService;
+	private SmartValidator smartValidator;
+	
+	//コンストラクタインジェクション
+	public Team13AdminLoginController(Team13AdminLoginService adminService,SmartValidator smartValidator) {
+		this.adminService = adminService;
+		this.smartValidator = smartValidator;
+	}
+    
+  //空のTeam13Shainのインスタンス作成(モデル名：login)
+  @ModelAttribute("Adminlogin")
+  public Team13Admin setupLogin() {
+      return new Team13Admin();
+  }
+  
+	
+  @GetMapping("/Team13_Admin_Login")
+  public String login() {
+      return "team13/Team13Admin/Team13_Login";
+  }
+    
     @PostMapping("/Team13_Admin_Login")
-    public String send(@ModelAttribute("Adminlogin") Team13Admin team13admin,
-                       BindingResult result,
-                       Model model) {
+    public String send(@ModelAttribute("Adminlogin") Team13Admin team13admin,BindingResult result,Model model) {
 
-        smartValidator.validate(team13admin, result);
-        if (result.hasErrors()) {
-            return "team13/Team13Admin/Team13_Login";
-        }
+    	smartValidator.validate(team13admin, result);
+    	if(result.hasErrors()) {
+    		return "team13/Team13Admin/Team13_Login";
+    	}
+    	
+    	 if ((adminService.isPass(team13admin) == false)) {
+             model.addAttribute("error", "管理者IDまたはパスワードが違います");
+             return "team13/Team13Admin/Team13_Login";
+         }
 
-        if (!adminService.isPass(team13admin)) {
-            model.addAttribute("error", "管理者IDまたはパスワードが違います");
-            return "team13/Team13Admin/Team13_Login";
-        }
+    	Optional<Team13Admin> shainData = adminService.getShainById(team13admin.getKanriId());
+    	
+    	
 
-        Optional<Team13Admin> adminData =
-                adminService.getAdminById(team13admin.getKanriId());
-
-        // セッションに管理者IDを保存
-        team13LoginSession.setShainId(team13admin.getKanriId());
-
-        return "redirect:/Team13_Admin_Home";
+    	String kanri_id = team13admin.getKanriId();
+		team13LoginSession.setShainId(kanri_id);
+    	
+    	return "redirect:Team13_Admin_Home";
     }
+    
 }

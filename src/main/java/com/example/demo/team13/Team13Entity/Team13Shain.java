@@ -12,7 +12,6 @@ import lombok.Data;
 @Entity
 @Table(name = "team13_shain_tbl")
 public class Team13Shain {
-
     @Id
     @NotBlank(message="IDを入力してください")
     @Column(name = "SHAIN_ID")

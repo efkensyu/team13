@@ -16,8 +16,6 @@ import com.example.demo.team13.Team13Service.Team13General.Team13Cart.Team13Make
 public class Team13PayCompleteController {
 	@Autowired
 	public Team13MakeRecipt rec;
-	@Autowired
-	private Team13CartInfo cartInfo; 
 	@GetMapping("/Team13_Pay_Complete")
 	public String index() {
 		
@@ -26,7 +24,7 @@ public class Team13PayCompleteController {
 	
 	@PostMapping("/Team13_Pay_Complete")
 	public void recipit(HttpServletResponse response) throws IOException {
-			rec.makeXSSF(response,cartInfo);
+			rec.makeXSSF(response,"a");
 	}
 	
 }
