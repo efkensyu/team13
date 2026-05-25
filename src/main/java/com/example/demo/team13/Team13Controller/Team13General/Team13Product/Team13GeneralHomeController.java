@@ -9,16 +9,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.example.demo.team13.Team13Controller.Team13Auth.Team13Login.Team13LoginSession;
+import com.example.demo.team13.Session.Team13LoginSession;
 import com.example.demo.team13.Team13Entity.Team13Shohin;
 import com.example.demo.team13.Team13Service.Team13General.Team13Product.Team13GeneralHomeService;
 
-import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
 @Controller
 @RequiredArgsConstructor
-@Data
+//@Data
 public class Team13GeneralHomeController {
 	@Autowired
 	Team13LoginSession team13loginSession;

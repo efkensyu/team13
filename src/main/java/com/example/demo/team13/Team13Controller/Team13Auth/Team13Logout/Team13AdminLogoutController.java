@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.example.demo.team13.Team13Controller.Team13Auth.Team13Login.Team13LoginSession;
+import com.example.demo.team13.Session.Team13LoginSession;
 
 @Controller
 public class Team13AdminLogoutController {

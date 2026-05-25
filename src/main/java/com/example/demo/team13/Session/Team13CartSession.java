@@ -1,10 +1,12 @@
-package com.example.demo.team13.Team13Controller.Team13General.Team13Cart;
+package com.example.demo.team13.Session;
 
 import java.io.Serializable;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.context.annotation.SessionScope;
+
+import com.example.demo.team13.Team13Controller.Team13General.Team13Cart.Team13CartInfo;
 
 @Component
 @SessionScope
