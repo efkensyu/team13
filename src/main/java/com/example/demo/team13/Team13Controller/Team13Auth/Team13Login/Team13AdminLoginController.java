@@ -44,6 +44,8 @@ public class Team13AdminLoginController {
 
     	smartValidator.validate(team13admin, result);
     	if(result.hasErrors()) {
+    		System.out.println(team13admin.getKanriId());
+    		System.out.println(team13admin.getKanriPass());
     		return "team13/Team13Admin/Team13_Login";
     	}
     	
