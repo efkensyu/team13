@@ -39,8 +39,9 @@ public class Team13GeneralLoginController {
     }
     
     @PostMapping("/Team13_General_Login")
+
     public String send(@ModelAttribute("login") Team13Shain team13shain,BindingResult result,Model model) {
-    	
+
     	smartValidator.validate(team13shain, result);
     	if(result.hasErrors()) {
     		return "team13/Team13General/Team13_Login";
@@ -59,5 +60,8 @@ public class Team13GeneralLoginController {
 		team13LoginSession.setShainId(shain_id);
    
         return "redirect:Team13_General_Home";
+//    	ここに実処理呼び出し
+
+
     }
 }

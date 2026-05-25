@@ -1,23 +1,13 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.ofg">
-<link rel="stylesheet" th:href="@{/css/Team13Admin.css}">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-	<div class="bold_header" th:fragment="Admin_Header">
-		
-	    <div class="header_left">
-	        <h3>ボールドグッズ定価販売サイト</h3>
-	    </div>
-
-	    <div class="header_right">
-	        <a th:href="@{/Team13_Admin_Home}">ホーム</a>
-	        <a th:href="@{/Team13_Admin_Profile}">管理者情報</a>
-	    </div>
-
-	</div>
-
+	    <div th:fragment="Admin_Header">
+			<a th:href="@{/Team13_Admin_Home}">ホーム</a>
+			<a th:href="@{/Team13_Admin_Profile}">管理者情報</a>
+		</div>
 </body>
 </html>

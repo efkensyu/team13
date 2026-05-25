@@ -13,7 +13,7 @@ import lombok.RequiredArgsConstructor;
 @Service
 @RequiredArgsConstructor
 public class Team13GeneralLoginService {
-	
+
 	private final Team13ShainRepository repository;
 	//ID・メール認証
 	public Boolean isPass(Team13Shain shain) {
@@ -28,6 +28,5 @@ public class Team13GeneralLoginService {
 		return repository.findById(shain_id);
 				
 	}
-	
 	
 }
