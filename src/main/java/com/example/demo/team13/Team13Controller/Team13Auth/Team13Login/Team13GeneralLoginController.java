@@ -39,7 +39,7 @@ public class Team13GeneralLoginController {
     }
     
     @PostMapping("/Team13_General_Login")
-    public String send(@ModelAttribute Team13Shain team13shain,Model model,BindingResult result) {
+    public String send(@ModelAttribute("login") Team13Shain team13shain,BindingResult result,Model model) {
     	
     	smartValidator.validate(team13shain, result);
     	if(result.hasErrors()) {
@@ -50,14 +50,14 @@ public class Team13GeneralLoginController {
              model.addAttribute("error", "社員IDまたはメールアドレスが違います");
              return "team13/Team13General/Team13_Login";
          }
-//    	ここに実処理呼び出し
+
     	Optional<Team13Shain> shainData = shainService.getShainById(team13shain.getShainId());
     	
     	
- //   	問題なく照合出来たら
-//    	String shain_id = でIdを格納
-//		loginSession.setShainId(shain_id);
-//    	この文章を含めてコメントアウトを外し、不要な文章を消してください。
-        return "team13/Team13General/Team13_Home";
+
+    	String shain_id = team13shain.getShainId();
+		team13LoginSession.setShainId(shain_id);
+   
+        return "redirect:Team13_General_Home";
     }
 }

@@ -27,7 +27,7 @@ public class Team13GeneralHomeController {
 	@PostMapping("/Team13_General_Home")
 	public String send(){
 	
-    return "team13/Team13General/Team13_Cart";
+    return "redirect:/Team13_Buy";
  
 }
 

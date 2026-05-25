@@ -13,12 +13,11 @@
 			<h1 class="login_title">ユーザログイン</h1>
 			
 			<p>ログイン情報を入力してください</p>
-			<p>社員ID:<input type="text" th:field="*{shainId}"></p>
 			<th:block th:if="${#fields.hasErrors('shainId')}" th:errors="*{shainId}"></th:block>
+			<p>社員ID:<input type="text" th:field="*{shainId}"></p>
 			
-			<p>メールアドレス:<input type="text" th:field="*{shainEmail}"></p>
 			<th:block th:if="${#fields.hasErrors('shainEmail')}" th:errors="*{shainEmail}"></th:block>
-			
+			<p>メールアドレス:<input type="text" th:field="*{shainEmail}"></p>
 
 			
 			<button class="bold_btn">ログイン</button>
