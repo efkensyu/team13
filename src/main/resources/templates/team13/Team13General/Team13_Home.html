@@ -9,11 +9,13 @@
 	<div th:replace="~{team13/Team13Header/Team13_Header_General :: General_Header}"></div>
 
 	<form method="post" th:action="@{/Team13_Cart}">
-		<h3>商品一覧</h3>		
+
+		<h3>商品一覧</h3>
+		
 			<img th:if="${shohinData[0].shohin_id == 'A0001'}" th:src="@{/images/ボルT.png}" alt="表示できません" style="max-width: 100%; height: auto;" title="ボルT">
 			<span>ボルT 965円</span>
+			<input type="number" name="count">
 			<button type="submit" name="shohin_id" th:value="${shohinData[0].shohin_id}">追加</button>
-			<input type="text">
 			
 			<img th:if="${shohinData[1].shohin_id == 'A0002'}" th:src="@{/images/ボールドペン.png}" style="max-width: 100%; height: auto;" title="ボールドペン">
 			<span>ボールドペン 816円</span>
