@@ -7,7 +7,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.example.demo.team13.Team13Entity.Team13Shain;
 import com.example.demo.team13.Team13Entity.Team13Shohin;
 import com.example.demo.team13.Team13Service.Team13General.Team13Auth.Team13ShainService;
 import com.example.demo.team13.Team13Service.Team13General.Team13Product.Team13GeneralHomeService;
@@ -24,9 +23,7 @@ public class Team13GeneralHomeController {
 	
 	@GetMapping("/Team13_General_Home")
 	public String add(Model model){
-	 List<Team13Shain> shainData = team13ShainService.findAll();
-	 model.addAttribute("shainData",shainData);
-	 
+		
 	List<Team13Shohin> shohinData = team13GeneralHomeService.findAll();
 		 model.addAttribute("shohinData",shohinData);
 		 System.out.println("商品データ出力");
@@ -36,8 +33,8 @@ public class Team13GeneralHomeController {
 	}
 	
 	
-//	@PostMapping(value="/Team13_General_Home", params="shohin_id")
-	@PostMapping(value="/Team13_General_Home")
+	@PostMapping(value="/Team13_General_Home", params="shohin_id")
+//  @PostMapping(value="/Team13_General_Home")
 	public String send(Model model){
 		
 		System.out.println("商品情報を送る");

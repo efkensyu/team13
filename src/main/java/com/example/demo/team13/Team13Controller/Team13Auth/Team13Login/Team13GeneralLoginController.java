@@ -57,6 +57,6 @@ public class Team13GeneralLoginController {
 //    	String shain_id = でIdを格納
 //		loginSession.setShainId(shain_id);
 //    	この文章を含めてコメントアウトを外し、不要な文章を消してください。
-        return "team13/Team13General/Team13_Home";
+        return "redirect:/Team13_General_Home";
     }
 }
