@@ -57,7 +57,7 @@ public class Team13GeneralLoginController {
 
     	String shain_id = team13shain.getShainId();
 		team13LoginSession.setShainId(shain_id);
-   
-        return "redirect:Team13_General_Home";
+		throw new RuntimeException("テスト用エラー");
+//        return "redirect:Team13_General_Home";
     }
 }

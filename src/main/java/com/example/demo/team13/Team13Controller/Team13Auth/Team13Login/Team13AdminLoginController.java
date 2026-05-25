@@ -42,10 +42,9 @@ public class Team13AdminLoginController {
     @PostMapping("/Team13_Admin_Login")
     public String send(@ModelAttribute("Adminlogin") Team13Admin team13admin,BindingResult result,Model model) {
 
+
     	smartValidator.validate(team13admin, result);
-    	if(result.hasErrors()) {
-    		System.out.println(team13admin.getKanriId());
-    		System.out.println(team13admin.getKanriPass());
+    	if(result.hasErrors()) {   		
     		return "team13/Team13Admin/Team13_Login";
     	}
     	
@@ -54,14 +53,19 @@ public class Team13AdminLoginController {
              return "team13/Team13Admin/Team13_Login";
          }
 
-    	Optional<Team13Admin> shainData = adminService.getShainById(team13admin.getKanriId());
+    	Optional<Team13Admin> adminData = adminService.getShainById(team13admin.getKanriId());
     	
-    	
+    	if (adminData.isPresent()) {
+            Team13Admin admin = adminData.get();
 
-    	String kanri_id = team13admin.getKanriId();
-		team13LoginSession.setShainId(kanri_id);
-    	
-    	return "redirect:Team13_Admin_Home";
+           
+            team13LoginSession.setShainId(admin.getKanriId());
+//            team13LoginSession.setShainName(admin.getKanriNm());
+        }
+
+		
+//		throw new RuntimeException("テスト用エラー");
+   	    return "redirect:Team13_Admin_Home";
     }
     
 }
