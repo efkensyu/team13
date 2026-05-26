@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.example.demo.team13.Session.Team13UserInfoSession;
+import com.example.demo.team13.Session.Team13AdminInfoSession;
 import com.example.demo.team13.Team13Entity.Team13Admin;
 import com.example.demo.team13.Team13Service.Team13Auth.Team13AdminLoginService;
 
 @Controller
 public class Team13AdminLoginController {
-	@Autowired Team13UserInfoSession team13UserInfoSession;
+	@Autowired Team13AdminInfoSession team13AdminInfoSession;
 	
 	private Team13AdminLoginService adminService;
 	private SmartValidator smartValidator;
@@ -55,16 +55,12 @@ public class Team13AdminLoginController {
          }
 
     	Optional<Team13Admin> adminData = adminService.getShainById(team13admin.getKanriId());
-    	
-    	if (adminData.isPresent()) {
-            Team13Admin admin = adminData.get();
-
            
-            team13UserInfoSession.setShain_id(admin.getKanriId());
-//            team13LoginSession.setShainName(admin.getKanriNm());
-        }
-
-		
+    	Team13Admin admin = adminData.get();
+    	
+    	team13AdminInfoSession.setKanri_id(admin.getKanriId());
+    	team13AdminInfoSession.setKanri_nm(admin.getKanriNm());
+    	team13AdminInfoSession.setKanri_pass(admin.getKanriPass());
 //		throw new RuntimeException("テスト用エラー");
    	    return "redirect:Team13_Admin_Home";
     }

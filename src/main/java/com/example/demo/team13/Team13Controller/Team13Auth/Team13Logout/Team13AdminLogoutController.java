@@ -7,12 +7,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.example.demo.team13.Session.Team13UserInfoSession;
+import com.example.demo.team13.Session.Team13AdminInfoSession;
 
 @Controller
 public class Team13AdminLogoutController {
 
-	@Autowired Team13UserInfoSession team13UserInfoSession;
+	@Autowired Team13AdminInfoSession team13AdminInfoSession;
 	
     @GetMapping("/Team13_Admin_Logout")
     public String logout(){
@@ -21,12 +21,12 @@ public class Team13AdminLogoutController {
     
     @PostMapping(value="/Team13_Admin_Logout",params="back")
     public String backlogout() {
-        return "team13/Team13Admin/Team13_Admin_Profile";
+        return "redirect:/Team13_Admin_Profile";
     }
     
     @PostMapping(value="/Team13_Admin_Logout",params="logout")
     public String sendlogout(HttpSession session) {
     	session.invalidate(); 
-        return "team13/Team13Admin/Team13_Login";
+        return "redirect:/Team13_Admin_Login";
     }
 }

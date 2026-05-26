@@ -1,11 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.ofg">
+<link rel="stylesheet" th:href="@{/css/Team13Admin.css}">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
+	
+	<div th:replace="~{team13/Team13Header/Team13_Header_Admin :: Admin_Header}"></div>
+	
+	</div>
 		<h1>管理者情報</h1>
+		<p th:text="|ユーザID：${admin.kanri_id}|"></p>
+	    <p th:text="|ユーザ名：${admin.kanri_nm}|"></p>
+	    <p th:text="|メールアドレス：${admin.kanri_pass}|"></p>
+		
 			
 		<a th:href="@{/Team13_Admin_Logout}">ログアウト</a>
 		
