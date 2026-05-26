@@ -1,12 +1,22 @@
 package com.example.demo.team13.Team13Repository;
 
+import jakarta.transaction.Transactional;
+
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import com.example.demo.team13.Team13Entity.Team13Order;
 
 public interface Team13OrderRepository extends JpaRepository<Team13Order,Integer>{
-//	@Query(value="insert into order_tbl values();", nativeQuery=true)
-//	public void InsertIntoOrderTable(@Param(value = "cartData")Team13CartInfo cartData);
-//	@Query(value="select * from bumon_tbl where bumon_cd = :code",nativeQuery = true)
-//	public List<Bumon> findBumonCd(@Param("code") String code);
+	@Modifying
+	@Transactional
+	@Query(value="""
+		    insert into team13_order_tbl(tyumon_shain_id, tyumon_product_id, tyumon_at)
+		    values(:#{#order.shain_id},
+		           :#{#order.shohin_id},
+		           :#{#order.order_at})
+		    """, nativeQuery=true)
+	public void InsertIntoOrderTable(@Param(value = "order")Team13Order order);
 }
