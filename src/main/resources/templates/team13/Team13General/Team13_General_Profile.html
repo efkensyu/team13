@@ -10,6 +10,13 @@
 			
 	</div>
 		<h1>ユーザ情報</h1>
+		
+		<p th:text="|管理者ID：${user.shain_id}|"></p>
+	    <p th:text="|ユーザ名：${user.shain_nm}|"></p>
+	    <p th:text="|メールアドレス：${user.shain_email}|"></p>
+	    <p th:text="|電話：${user.shain_tell}|"></p>
+	    <p th:text="|住所：${user.shain_adress}|"></p>
+		
 		<a th:href="@{/Team13_General_Logout}">ログアウト</a>
 </body>
 </html>

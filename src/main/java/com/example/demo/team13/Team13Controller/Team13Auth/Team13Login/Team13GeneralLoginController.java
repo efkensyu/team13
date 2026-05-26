@@ -57,14 +57,14 @@ public class Team13GeneralLoginController {
     	
     	
 		Team13Shain shain = shainData.get();
-		
-		
-		// ★ セッションに DB の値を保存
-		team13UserInfoSession.setShain_id(shain.getShainId());
+
+		// セッションに DB の値を保存
+		team13UserInfoSession.setShain_id(shain.getShainId());	
 		team13UserInfoSession.setShain_nm(shain.getShainNm());
 		team13UserInfoSession.setShain_adress(shain.getShainAdress());
 		team13UserInfoSession.setShain_email(shain.getShainEmail());
 		team13UserInfoSession.setShain_tell(shain.getShainTell());
+
 
 //		throw new RuntimeException("テスト用エラー");
 		
