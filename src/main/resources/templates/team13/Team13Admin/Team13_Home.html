@@ -3,52 +3,89 @@
 <link rel="stylesheet" th:href="@{/Team13/Team13css/Team13Admin.css}">
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>在庫一覧</title>
 </head>
 <body>
-	
 
-	<div th:replace="~{team13/Team13Header/Team13_Header_Admin :: Admin_Header}"></div>
-		
-		<h3>商品一覧</h3>
+    <div th:replace="~{team13/Team13Header/Team13_Header_Admin :: Admin_Header}"></div>
 
-		<form method="post" th:action="@{/Team13_Update_Stock}">
-				<img th:if="${shohinData[0].shohin_id == 'A0001'}" th:src="@{/images/ボルT.png}" alt="表示できません" style="max-width: 100%; height: auto;" title="ボルT">
-				<span>ボルT 965円</span>
-				<input type="number" name="count" required>
-				<button type="submit" name="shohin_id" th:value="${shohinData[0].shohin_id}">更新</button>
-		</form>
-		
-		<form method="post" th:action="@{/Team13_Update_Stock}">			
-				<img th:if="${shohinData[1].shohin_id == 'A0002'}" th:src="@{/images/ボールドペン.png}" style="max-width: 100%; height: auto;" title="ボールドペン">
-				<span>ボールドペン 816円</span>
-				<input type="number" name="count" required>
-				<button type="submit" name="shohin_id" th:value="${shohinData[1].shohin_id}">更新</button>
-		</form>
-		
-		<form method="post" th:action="@{/Team13_Update_Stock}">			
-				<img th:if="${shohinData[2].shohin_id == 'A0003'}" th:src="@{/images/ボルシャツ.png}" alt="表示できません" style="max-width: 100%; height: auto;" title="ボルシャツ">
-				<span>ボルシャツ 1200円</span>
-				<input type="number" name="count" required>
-				<button type="submit" name="shohin_id" th:value="${shohinData[2].shohin_id}">更新</button>
-		</form>
-			<br>
-			
-		<form method="post" th:action="@{/Team13_Update_Stock}">	
-				<img th:if="${shohinData[3].shohin_id == 'A0004'}" th:src="@{/images/ボルパカ.png}" alt="表示できません" style="max-width: 100%; height: auto;" title="ボルパカ">
-				<span>ボルパカ 2595円</span>
-				<input type="number" name="count" required>
-				<button type="submit" name="shohin_id" th:value="${shohinData[3].shohin_id}">更新</button>
-		</form>
-		
-		<form method="post" th:action="@{/Team13_Update_Stock}">			
-				<img th:if="${shohinData[4].shohin_id == 'A0005'}" th:src="@{/images/社章.png}" alt="表示できません" style="max-width: 100%; height: auto;" title="社章">
-				<span>社章 726円</span>
-				<input type="number" name="count" required>
-				<button type="submit" name="shohin_id" th:value="${shohinData[4].shohin_id}">更新</button>
-		</form>
-			<br>
 
+    <h2>在庫一覧</h2>
+
+    <!-- ボルT -->
+    <form method="post" th:action="@{/Team13_Update_Stock}" class="product-card">
+        <div class="product-info">
+            <img th:if="${shohinData[0].shohin_id == 'A0001'}"
+                 th:src="@{/images/ボルT.png}" alt="表示できません" title="ボルT">
+            <span>ボルT</span>
+        </div>
+
+        <div class="product-actions">
+            数量：<input type="number" name="count" required>
+            <button class="add_btn btn-sm" type="submit" name="shohin_id"
+                    th:value="${shohinData[0].shohin_id}">更新</button>
+        </div>
+    </form>
+
+    <!-- ボールドペン -->
+    <form method="post" th:action="@{/Team13_Update_Stock}" class="product-card">
+        <div class="product-info">
+            <img th:if="${shohinData[1].shohin_id == 'A0002'}"
+                 th:src="@{/images/ボールドペン.png}" alt="表示できません" title="ボールドペン">
+            <span>ボールドペン</span>
+        </div>
+
+        <div class="product-actions">
+            数量：<input type="number" name="count" required>
+            <button class="add_btn btn-sm" type="submit" name="shohin_id"
+                    th:value="${shohinData[1].shohin_id}">更新</button>
+        </div>
+    </form>
+
+    <!-- ボルシャツ -->
+    <form method="post" th:action="@{/Team13_Update_Stock}" class="product-card">
+        <div class="product-info">
+            <img th:if="${shohinData[2].shohin_id == 'A0003'}"
+                 th:src="@{/images/ボルシャツ.png}" alt="表示できません" title="ボルシャツ">
+            <span>ボルシャツ</span>
+        </div>
+
+        <div class="product-actions">
+            数量：<input type="number" name="count" required>
+            <button class="add_btn btn-sm" type="submit" name="shohin_id"
+                    th:value="${shohinData[2].shohin_id}">更新</button>
+        </div>
+    </form>
+
+    <!-- ボルパカ -->
+    <form method="post" th:action="@{/Team13_Update_Stock}" class="product-card">
+        <div class="product-info">
+            <img th:if="${shohinData[3].shohin_id == 'A0004'}"
+                 th:src="@{/images/ボルパカ.png}" alt="表示できません" title="ボルパカ">
+            <span>ボルパカ</span>
+        </div>
+
+        <div class="product-actions">
+            数量：<input type="number" name="count" required>
+            <button class="add_btn btn-sm" type="submit" name="shohin_id"
+                    th:value="${shohinData[3].shohin_id}">更新</button>
+        </div>
+    </form>
+
+    <!-- 社章 -->
+    <form method="post" th:action="@{/Team13_Update_Stock}" class="product-card">
+        <div class="product-info">
+            <img th:if="${shohinData[4].shohin_id == 'A0005'}"
+                 th:src="@{/images/社章.png}" alt="表示できません" title="社章">
+            <span>社章</span>
+        </div>
+
+        <div class="product-actions">
+            数量：<input type="number" name="count" required>
+            <button class="add_btn btn-sm" type="submit" name="shohin_id"
+                    th:value="${shohinData[4].shohin_id}">更新</button>
+        </div>
+    </form>
 
 </body>
 </html>
