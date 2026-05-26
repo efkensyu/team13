@@ -24,15 +24,29 @@ public class Team13AddCartService {
 			team13UserInfoSession.setCartInfo(cartList);
 		}  
 		
-		cartInfo = new Team13CartInfo();
-		
-		cartInfo.setShohin_id(cartItem.getShohin_id());
-		cartInfo.setShohin_nm(cartItem.getShohin_nm());
-		cartInfo.setShohin_price(cartItem.getShohin_price());
-		cartInfo.setShohin_num(cartInfo.getShohin_num() + count);
-		cartInfo.setShohin_photo(photo_path);
-		
-		cartList.add(cartInfo);
-		return cartList;
+		boolean found = false;
+
+	    // 既存のカートアイテムをチェック
+	    for (Team13CartInfo info : cartList) {
+	        if (info.getShohin_id().equals(cartItem.getShohin_id())) {
+	            // 同じ商品が既に存在する場合は数量を加算
+	            info.setShohin_num(info.getShohin_num() + count);
+	            found = true;
+	            break;
+	        }
+	    }
+
+	    // 存在しなければ新規追加
+	    if (!found) {
+	        Team13CartInfo cartInfo = new Team13CartInfo();
+	        cartInfo.setShohin_id(cartItem.getShohin_id());
+	        cartInfo.setShohin_nm(cartItem.getShohin_nm());
+	        cartInfo.setShohin_price(cartItem.getShohin_price());
+	        cartInfo.setShohin_num(count); // 新規なので count をセット
+	        cartInfo.setShohin_photo(photo_path);
+	        cartList.add(cartInfo);
+	    }
+
+	    return cartList;
 	}
 }
