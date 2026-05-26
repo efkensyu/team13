@@ -17,9 +17,9 @@ public class Team13GeneralLogoutController {
     @GetMapping("/Team13_General_Logout")
     public String logout(){
     	  //ログイン認証
-        if (team13UserInfoSession.getShain_id() == null) {
-            return "redirect:/Team13_General_Login";
-        }
+//        if (team13UserInfoSession.getShain_id() == null) {
+//            return "redirect:/Team13_General_Login";
+//        }
         return "team13/Team13General/Team13_Logout";
     }
     

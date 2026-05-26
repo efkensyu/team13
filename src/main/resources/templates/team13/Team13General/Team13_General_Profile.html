@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.ofg">
+<link rel="stylesheet" th:href="@{/Team13/Team13css/Team13General.css}">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -9,14 +10,19 @@
 	<div th:replace="~{team13/Team13Header/Team13_Header_General :: General_Header}">
 			
 	</div>
-		<h1>ユーザ情報</h1>
+		<h2>ユーザ情報</h2>	
 		
-		<p th:text="|ユーザID：${user.shain_id}|"></p>
-	    <p th:text="|ユーザ名：${user.shain_nm}|"></p>
-	    <p th:text="|メールアドレス：${user.shain_email}|"></p>
-	    <p th:text="|電話：${user.shain_tell}|"></p>
-	    <p th:text="|住所：${user.shain_adress}|"></p>
-		
-		<a th:href="@{/Team13_General_Logout}">ログアウト</a>
+		<div class="info-card">
+			<div class="text-center">
+			
+				<p th:text="|ユーザID：${user.shain_id}|"></p>
+			    <p th:text="|ユーザ名：${user.shain_nm}|"></p>
+			    <p th:text="|メールアドレス：${user.shain_email}|"></p>
+			    <p th:text="|電話：${user.shain_tell}|"></p>
+			    <p th:text="|住所：${user.shain_adress}|"></p>
+			
+				<a class="logout-link "th:href="@{/Team13_General_Logout}">ログアウト</a>
+			</div>	
+		</div>
 </body>
 </html>
