@@ -15,15 +15,24 @@
 	                <p>管理者情報を入力してください</p>
 	            </div>
 
-	            <p>認証ID:<input type="text" th:field="*{kanriId}"></p>
-	            <th:block th:if="${#fields.hasErrors('kanriId')}">
+	           	認証ID<br>
+				
+				<!--エラーメッセージ-->
+				<th:block th:if="${#fields.hasErrors('kanriId')}">
 	                <p class="error-text" th:errors="*{kanriId}"></p>
 	            </th:block>
+				
+				<p><input type="text" th:field="*{kanriId}">	</p>
+	            
 
-	            <p>パスワード:<input type="password" th:field="*{kanriPass}"></p>
+	            パスワード<br>
+				
+				<!--エラーメッセージ-->
 	            <th:block th:if="${#fields.hasErrors('kanriPass')}">
 	                <p class="error-text" th:errors="*{kanriPass}"></p>
 	            </th:block>
+				
+				<p><input type="password" th:field="*{kanriPass}"></p>
 
 	            <div class="button-area">
 	                <button class="bold_btn">ログイン</button>
