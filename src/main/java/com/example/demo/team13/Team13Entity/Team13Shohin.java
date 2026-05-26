@@ -15,6 +15,6 @@ public class Team13Shohin {
 	private String shohin_id;
 	private String shohin_nm;
 	private int shohin_price;
-	private String shohin_stock;
+	private int shohin_stock;
 	
 }

@@ -8,6 +8,22 @@
 	<div th:replace="~{team13/Team13Header/Team13_Header_Admin :: Admin_Header}"></div>
 	<form method="post" th:action="@{/Team13_Admin_Update}">
 		<h1>在庫更新確認画面</h1>
+		
+		<p>商品ID:
+			<span th:text="${shohin.shohin_id}"></span>
+		</p>
+		
+		<p>商品名:
+			<span th:text="${shohin.shohin_nm}"></span>
+		</p>
+		
+		<p>変更後の在庫数:
+			<span th:text="${shohin.shohin_stock + count} + 個"></span>
+		</p>
+		
+		<input type="hidden" name="shohin_id" th:value="${shohin.shohin_id}">
+		<input type="hidden" name="count" th:value="${count}">
+		
 		<input type="submit" name="back" value="戻る">
 		<input type="submit" name="confirm"value="確認">
 	</form>
