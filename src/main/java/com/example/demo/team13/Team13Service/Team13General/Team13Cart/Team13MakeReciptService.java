@@ -3,6 +3,7 @@ package com.example.demo.team13.Team13Service.Team13General.Team13Cart;
 import java.io.IOException;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
+import java.util.List;
 
 import jakarta.servlet.ServletOutputStream;
 import jakarta.servlet.http.HttpServletResponse;
@@ -14,11 +15,13 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.util.CellReference;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.stereotype.Service;
+
+import com.example.demo.team13.Team13Controller.Team13General.Team13Cart.Team13CartInfo;
 @Service
 public class Team13MakeReciptService {
 //	public HttpServletResponse response;
 	
-	public void makeXSSF(HttpServletResponse response,String word)throws IOException{			//エクセルファイル生成。
+	public void makeXSSF(HttpServletResponse response,List<Team13CartInfo> cartList)throws IOException{			//エクセルファイル生成。
 		Workbook workbook_ = new XSSFWorkbook();
 		
 		Sheet sheet_ = workbook_.createSheet("領収書");
@@ -26,14 +29,27 @@ public class Team13MakeReciptService {
 		//createRow()に渡すのはインデックス。
 		//1行目なら0、2行目なら1。
 		//2行目のB列、つまりB2セルに値がセットされる。
-		Row row_ = sheet_.createRow(1);
-		Cell cell_ = row_.createCell(CellReference.convertColStringToIndex("B"));
+//		Row row_ = sheet_.createRow(1);
+//		Cell cell_ = row_.createCell(CellReference.convertColStringToIndex("B"));
 //		セルに値をセット
-		cell_.setCellValue(word);
+//		cell_.setCellValue();
 //		不要になったら消すこと！
+		Row row_title = sheet_.createRow(1);
+		Cell cell_title = row_title.createCell(CellReference.convertColStringToIndex("E"));
+		cell_title.setCellValue("Bold Official Shop");
 		
-		
-		
+		Row row_NiceSoul = sheet_.createRow(3);
+		Cell cell_NiceSoul = row_NiceSoul.createCell(CellReference.convertColStringToIndex("G"));
+		cell_NiceSoul.setCellValue("NiceSoul!!!");
+		int i = 3;
+		for(Team13CartInfo cartData : cartList) {
+			i ++;
+			Row row_shohin_info = sheet_.createRow(i);
+			Cell cell_shohin_nm = row_shohin_info.createCell(CellReference.convertColStringToIndex("C"));
+			cell_shohin_nm.setCellValue(cartData.getShohin_nm());
+			Cell cell_shohin_num = row_shohin_info.createCell(CellReference.convertColStringToIndex("G"));
+			cell_shohin_num.setCellValue(cartData.getShohin_num());
+		}
 		//---------------------------------------------------------------------------------------------
 		//ダウンロード。
 		
