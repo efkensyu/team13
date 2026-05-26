@@ -17,7 +17,7 @@
 
 	        <p class="white-text">認証ID:<input type="text" th:field="*{kanriId}"></p>
 	        <th:block th:if="${#fields.hasErrors('kanriId')}">
-	            <p class="error-text" th:errors="*{kanriId}"></p>
+	         <p class="error-text" th:errors="*{kanriId}"></p>
 	        </th:block>
 
 	        <p class="white-text">パスワード:<input type="password" th:field="*{kanriPass}"></p>
