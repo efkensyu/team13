@@ -1,33 +1,23 @@
 @charset "UTF-8";
 
-
-body.login {
-    background-image: url("/Team13/Team13images/Team13ログイン用会社画像.png"); /* 写真のパス */
-    background-size: cover;       /* 画面いっぱいに拡大縮小 */
-    background-position: center;  /* 中央に配置 */
-    background-repeat: no-repeat; /* 繰り返しなし */
-    height: 100vh;                /* 画面全体を使う */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-	}
-	
-body.login{
-	color: white;
+/*共通スタイル*/
+.white-text {
+    color: white;
 }
 
+.error-text {
+    color: red !important;
+}
 
-
-
-body.login{
-	text-align: center;
+.text-center {
+    text-align: center; 
 }
 
 .center-box {
     display: flex;
     justify-content: center; /* 横中央 */
-    align-items: center;     /* 縦中央 */  
-	height: 100vh;         
+    align-items: center;     /* 縦中央 */
+    height: 100vh;
 }
 
 .bold_btn {
@@ -35,15 +25,13 @@ body.login{
     justify-content: center;
     align-items: center;
     position: relative;
-    width: 200px;
-    margin:0 auto;
+    margin: 0 auto;
     padding: .9em 2em;
     overflow: hidden;
     border: 1px solid #000ac4;
     border-radius: 5px;
     background-color: #fff;
     color: #000ac4;
-    font-size: 1em;
 }
 
 .bold_btn:hover {
@@ -66,6 +54,22 @@ body.login{
 .bold_btn:hover::before {
     width: 100%;
 }
+
+
+/*画面ごと*/
+body.login {
+    background-image: url("/images/ログイン用会社画像.png"); /* 写真のパス */
+    background-size: cover;       /* 画面いっぱいに拡大縮小 */
+    background-position: center;  /* 中央に配置 */
+    background-repeat: no-repeat; /* 繰り返しなし */
+    height: 100vh;                /* 画面全体を使う */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	}
+	
+
+
 
 /* ヘッダー全体 */
 .bold_header {
