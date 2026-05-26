@@ -2,7 +2,7 @@
 
 
 body.login {
-    background-image: url("/images/ログイン用会社画像.png"); /* 写真のパス */
+    background-image: url("/Team13/Team13images/Team13ログイン用会社画像.png"); /* 写真のパス */
     background-size: cover;       /* 画面いっぱいに拡大縮小 */
     background-position: center;  /* 中央に配置 */
     background-repeat: no-repeat; /* 繰り返しなし */
