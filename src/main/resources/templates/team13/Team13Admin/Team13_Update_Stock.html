@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.ofg">
+<link rel="stylesheet" th:href="@{/Team13/Team13css/Team13Admin.css}">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -7,25 +8,29 @@
 <body>
 	<div th:replace="~{team13/Team13Header/Team13_Header_Admin :: Admin_Header}"></div>
 	<form method="post" th:action="@{/Team13_Admin_Update}">
-		<h1>在庫更新確認画面</h1>
 		
-		<p>商品ID:
-			<span th:text="${shohin.shohin_id}"></span>
-		</p>
+		<div class="confirm-card">
+		    <h2>更新確認</h2>
 		
-		<p>商品名:
-			<span th:text="${shohin.shohin_nm}"></span>
-		</p>
-		
-		<p>変更後の在庫数:
-			<span th:text="${shohin.shohin_stock + count} + 個"></span>
-		</p>
-		
-		<input type="hidden" name="shohin_id" th:value="${shohin.shohin_id}">
-		<input type="hidden" name="count" th:value="${count}">
-		
-		<input type="submit" name="back" value="戻る">
-		<input type="submit" name="confirm"value="確認">
+				<div class="text-center">
+					
+					<p class="big">
+						<span th:text="${shohin.shohin_nm}"></span>
+					</p>
+					
+					<p>在庫数
+						<span th:text="${shohin.shohin_stock} + 個"></span>
+						　→　
+						<span class="stock-count" th:text="${shohin.shohin_stock + count} + 個"></span>
+					</p>
+					
+				</div>
+			<div class="button-area">		
+				<input class="back_btn" type="submit" name="back" value="戻る">
+				<input class="add_btn" type="submit" name="confirm"value="確認">
+			</div>
+			
+		</div>
 	</form>
 </body>
 </html>

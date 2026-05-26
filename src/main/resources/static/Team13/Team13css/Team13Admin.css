@@ -1,6 +1,28 @@
 @charset "UTF-8";
 
 /*共通スタイル*/
+
+/* ================================
+   フォントの大本（全体設定）
+   ================================ */
+/* Google Fonts の Noto Sans JP を読み込む */
+html, body {
+    font-family: 
+        "Yu Gothic Medium", 
+        "Yu Gothic", 
+        "Meiryo", 
+        sans-serif;
+		
+	background-color: #eeeeee;
+}
+
+
+
+h2{
+	color:#000ac4;
+	text-align: center;
+}
+
 .white-text {
     color: white;
 }
@@ -8,7 +30,7 @@
 .error-text {
     color: red !important;
 }
-
+/*ポジション修正*/
 .text-center {
     text-align: center; 
 }
@@ -20,33 +42,54 @@
     height: 100vh;
 }
 
+.button-area {
+    display: flex;
+    justify-content: center;
+    gap: 1.5em;
+    margin-top: 25px;
+}
+
+
 .btn-sm {
     padding: 0.3em 0.8em;  
     min-width: 80px;       
 }
 
+.text-center p.big {
+    font-size: 1.5rem;   
+    font-weight: 600;   
+    color: #333;        
+    display: block;     
+    margin-bottom: 5px;
+}
+
+.stock-count {
+    font-size: 1.8rem;   
+    font-weight: 700;    
+    color: black;      
+    margin-top: 10px;
+}
 
 
+
+/*-----------------------通常ボタン-----------------------------------*/
 .bold_btn {
-    display: flex;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    margin: 0 auto;
-    padding: .9em 2em;
+    padding: .6em 1.2em;
     overflow: hidden;
     border: 1px solid #000ac4;
     border-radius: 5px;
     background-color: #fff;
     color: #000ac4;
-}
-
-.bold_btn:hover {
-    background-color: transparent;
-    color: #fff;
+    cursor: pointer;
+	margin: 0;  
 }
 
 .bold_btn::before {
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -54,16 +97,121 @@
     width: 0;
     height: 100%;
     background-color: #000ac4;
-    content: '';
     transition: width .3s ease;
+}
+
+.bold_btn:hover {
+    color: #fff;
 }
 
 .bold_btn:hover::before {
     width: 100%;
 }
+/*-----------------------通常ボタン-----------------------------------*/
+.add_btn {
+    padding: 0.5em 1.2em;
+    border: 1px solid #000ac4;
+    border-radius: 5px;
+    background-color: #000ac4;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/*-----------------------戻るボタン-----------------------------------*/
+.back_btn {
+    padding: 0.5em 1.2em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    color: #333;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.back_btn:hover {
+    background-color: #e0e0e0;
+}
+
+a.logout-link {
+    color: #e53935;
+    font-weight: 600;
+    position: relative;   /* ← これが必須 */
+    padding-bottom: 4px;
+    text-decoration: none;
+}
+
+a.logout-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #ff5252;
+    transition: width 0.3s ease;
+}
+
+a.logout-link:hover {
+    color: #ff1744;       /* ホバー時の濃い赤 */
+}
+
+a.logout-link:hover::after {
+    width: 100%;
+}
+
+/* 商品情報部分（画像＋テキスト＋入力欄）をまとめる */
+.product-card {
+    display: flex;
+    justify-content: space-between; /* 左右に分ける */
+    align-items: center;
+    padding: 15px 20px;
+    margin: 15px 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.product-info {
+    display: flex;
+    align-items: center;
+    gap: 1.2em;
+}
+
+.product-card span {
+    font-size: 1.3rem;   
+    font-weight: 600;    
+    color: #333;
+}
+
+.product-card img {
+    width: 120px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.product-actions {
+	font-size: 1.3rem;   
+	font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.product-card input[type="number"] {
+    width: 80px;
+    padding: 5px;
+    font-size: 1rem;
+}
+
+
 
 
 /*画面ごと*/
+
+/*------------ログイン------------------------*/
 body.login {
     background-image: url("/images/ログイン用会社画像.png"); /* 写真のパス */
     background-size: cover;       /* 画面いっぱいに拡大縮小 */
@@ -75,10 +223,31 @@ body.login {
     align-items: center;
 	}
 	
+/*------------確認カードスタイル------------------------*/
+.confirm-card {
+    width: 600px;
+    margin: 50px auto;
+    padding: 30px 40px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: left;
+}
 
+.confirm-card p {
+    font-size: 1.1rem;
+    margin: 10px 0;
+}
 
+.confirm-card .button-area {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin-top: 20px;
+}
+/*------------ヘッダー全体 -----------------*/
 
-/* ヘッダー全体 */
 .bold_header {
     display: flex;
     justify-content: space-between;
@@ -87,26 +256,22 @@ body.login {
     background-color: #000ac4;
     color: white;
     height: 100px;
-	font-style: bold;
+    font-weight: 700; 
 }
 
-
-/* 右側リンクの並び */
 .header_right {
     display: flex;
     gap: 2em;
 }
 
-/* リンクを白くする（フォントサイズは触らない） */
 .header_right a {
-    color: white;          /* ← これだけで白くなる */
+    color: white;          
     text-decoration: none;
     position: relative;
     padding-bottom: 4px;
     font-weight: 400;
 }
 
-/* ホバー時の下線アニメーション */
 .header_right a::after {
     content: "";
     position: absolute;
