@@ -42,14 +42,29 @@ public class Team13MakeReciptService {
 		Cell cell_NiceSoul = row_NiceSoul.createCell(CellReference.convertColStringToIndex("G"));
 		cell_NiceSoul.setCellValue("NiceSoul!!!");
 		int i = 3;
+		int sumPrice = 0;
 		for(Team13CartInfo cartData : cartList) {
 			i ++;
+			int shohinPrice = cartData.getShohin_price();
+			int shohinNum = cartData.getShohin_num();
 			Row row_shohin_info = sheet_.createRow(i);
 			Cell cell_shohin_nm = row_shohin_info.createCell(CellReference.convertColStringToIndex("C"));
 			cell_shohin_nm.setCellValue(cartData.getShohin_nm());
+			Cell cell_shohin_price = row_shohin_info.createCell(CellReference.convertColStringToIndex("F"));
+			cell_shohin_price.setCellValue(shohinPrice + "円");
 			Cell cell_shohin_num = row_shohin_info.createCell(CellReference.convertColStringToIndex("G"));
-			cell_shohin_num.setCellValue(cartData.getShohin_num());
+			cell_shohin_num.setCellValue(shohinNum + "点");
+			sumPrice = sumPrice + shohinPrice * shohinNum;
 		}
+		Row row_sumPrice = sheet_.createRow(8);
+		Cell cell_sumPrice_dec = row_sumPrice.createCell(CellReference.convertColStringToIndex("C"));
+		cell_sumPrice_dec.setCellValue("合計");
+		Cell cell_sumPrice = row_sumPrice.createCell(CellReference.convertColStringToIndex("G"));
+		cell_sumPrice.setCellValue(sumPrice + "円");
+		Row row_goodbye = sheet_.createRow(10);
+		Cell cell_goodbye = row_goodbye.createCell(CellReference.convertColStringToIndex("E"));
+		cell_goodbye.setCellValue("またのお買い物をお待ちしております！　ナイスォー！");
+		
 		//---------------------------------------------------------------------------------------------
 		//ダウンロード。
 		

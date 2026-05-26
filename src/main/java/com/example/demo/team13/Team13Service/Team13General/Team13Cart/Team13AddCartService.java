@@ -46,6 +46,8 @@ public class Team13AddCartService {
 	        cartInfo.setShohin_photo(photo_path);
 	        cartList.add(cartInfo);
 	    }
+	    
+	    
 
 	    return cartList;
 	}
