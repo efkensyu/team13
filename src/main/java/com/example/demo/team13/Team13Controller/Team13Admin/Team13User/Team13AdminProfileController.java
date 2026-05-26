@@ -13,7 +13,10 @@ public class Team13AdminProfileController {
 	
 	@GetMapping("/Team13_Admin_Profile")
 	public String add(Model model){
-		
+		 //ログイン認証
+	    if (team13AdminInfoSession.getKanri_id() == null) {
+	        return "redirect:/Team13_Admin_Login";
+	    }
 		model.addAttribute("admin",team13AdminInfoSession);
 		
 		return "team13/Team13Admin/Team13_Admin_Profile";
