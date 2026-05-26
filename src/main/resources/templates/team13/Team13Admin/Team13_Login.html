@@ -6,23 +6,33 @@
 <title>Insert title here</title>
 </head>
 <body class="login">
-	<div class="center-box">
 	
-		<form method="post" th:action="@{/Team13_Admin_Login}"th:object="${Adminlogin}">
-			
-			<h1 class="login_title">管理者ログイン</h1>
-			
-			<p>管理社情報を入力してください</p>
-			<p>認証ID:<input type="text" th:field="*{kanriId}"></p>
-			<th:block th:if="${#fields.hasErrors('kanriId')}" th:errors="*{kanriId}"></th:block>
-			
-			<p>パスワード:<input type="password" th:field="*{kanriPass}"></p>
-			<th:block th:if="${#fields.hasErrors('kanriPass')}" th:errors="*{kanriPass}"></th:block>
-			
-			<button class="bold_btn">ログイン</button>
-			<p th:text="${error}"></p>
-		</form>
+	<div class="center-box">
+	    <form method="post" th:action="@{/Team13_Admin_Login}" th:object="${Adminlogin}">
+
+	        <div class="white-text">
+	            <h1 class="login_title">管理者ログイン</h1>
+	            <p>管理者情報を入力してください</p>
+	        </div>
+
+	        <p class="white-text">認証ID:<input type="text" th:field="*{kanriId}"></p>
+	        <th:block th:if="${#fields.hasErrors('kanriId')}">
+	            <p class="error-text" th:errors="*{kanriId}"></p>
+	        </th:block>
+
+	        <p class="white-text">パスワード:<input type="password" th:field="*{kanriPass}"></p>
+	        <th:block th:if="${#fields.hasErrors('kanriPass')}">
+	            <p class="error-text" th:errors="*{kanriPass}"></p>
+	        </th:block>
+
+	        <br>
+	        <button class="bold_btn">ログイン</button>
+
+	        <p class="error-text" th:text="${error}"></p>
+
+	    </form>
 	</div>
+
 </body>
 </html>
 

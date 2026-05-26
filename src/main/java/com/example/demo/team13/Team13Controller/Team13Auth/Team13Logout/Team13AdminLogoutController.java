@@ -16,6 +16,11 @@ public class Team13AdminLogoutController {
 	
     @GetMapping("/Team13_Admin_Logout")
     public String logout(){
+	  //ログイン認証
+    if (team13AdminInfoSession.getKanri_id() == null) {
+        return "redirect:/Team13_Admin_Login";
+    }
+    	
         return "team13/Team13Admin/Team13_Logout";
     }
     

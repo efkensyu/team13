@@ -12,10 +12,14 @@ import com.example.demo.team13.Session.Team13UserInfoSession;
 @Controller
 public class Team13GeneralLogoutController {
 	
-	@Autowired Team13UserInfoSession team13AUserInfoSession;
+	@Autowired Team13UserInfoSession team13UserInfoSession;
 
     @GetMapping("/Team13_General_Logout")
     public String logout(){
+    	  //ログイン認証
+        if (team13UserInfoSession.getShain_id() == null) {
+            return "redirect:/Team13_General_Login";
+        }
         return "team13/Team13General/Team13_Logout";
     }
     
