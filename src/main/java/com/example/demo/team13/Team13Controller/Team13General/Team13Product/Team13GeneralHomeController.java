@@ -48,7 +48,6 @@ public class Team13GeneralHomeController {
 	@PostMapping(value="/Team13_Cart" ,params="shohin_id")
 	public String send(@RequestParam("shohin_id") String shohin_id, @RequestParam("count") int count,Model model){
 		Team13Shohin cartItem = team13GeneralHomeService.findById(shohin_id);
-		
 		List<Team13CartInfo> cartList = team13AddCartService.addCartList(cartItem,count,team13GeneralHomeService.selectPhoto(shohin_id));
 		
 		team13UserInfoSession.setCartInfo(cartList);

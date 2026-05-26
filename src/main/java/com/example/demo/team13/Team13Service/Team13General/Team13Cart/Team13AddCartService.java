@@ -3,23 +3,24 @@ package com.example.demo.team13.Team13Service.Team13General.Team13Cart;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.team13.Session.Team13UserInfoSession;
 import com.example.demo.team13.Team13Controller.Team13General.Team13Cart.Team13CartInfo;
-import com.example.demo.team13.Team13Entity.Team13CartDB;
 import com.example.demo.team13.Team13Entity.Team13Shohin;
-import com.example.demo.team13.Team13Repository.Team13CartDBRepository;
 
 import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
 public class Team13AddCartService {
+//	private Team13CartDBRepository cartDBRepository;
+	@Autowired 
 	private Team13CartInfo cartInfo; 
+	@Autowired
 	private Team13UserInfoSession team13UserInfoSession;
-	private Team13CartDB cartDB;
-	private Team13CartDBRepository cartDBRepository;
+//	private Team13CartDB cartDB;
 	public List<Team13CartInfo> addCartList(Team13Shohin cartItem,int count,String photo_path) {
 		List<Team13CartInfo> cartList = team13UserInfoSession.getCartInfo();
 //		System.out.println(cartList);
@@ -51,13 +52,12 @@ public class Team13AddCartService {
 	        cartList.add(cartInfo);
 	    }
 
-	    Team13CartDB cart = new Team13CartDB();
-	    cart.setCart_shain_id(team13UserInfoSession.getShain_id());
-	    cart.setCart_shohin_id(cartItem.getShohin_id());
-	    cart.setCart_shohin_num(count);
-	    
-	    cartDBRepository.InsertIntoCartShohinTbl(cart);
-	    cartDB.setCart_shain_id(team13UserInfoSession.getShain_id());
+//	    Team13CartDB cart = new Team13CartDB();
+//	    cart.setCart_shain_id(team13UserInfoSession.getShain_id());
+//	    cart.setCart_shohin_id(cartItem.getShohin_id());
+//	    cart.setCart_shohin_num(count);
+//	    cartDBRepository.InsertIntoCartShohinTbl(cart);
+//	 　 cartDB.setCart_shain_id(team13UserInfoSession.getShain_id());
 	    
 	    
 
