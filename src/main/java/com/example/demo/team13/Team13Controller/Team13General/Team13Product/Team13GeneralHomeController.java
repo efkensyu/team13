@@ -35,9 +35,9 @@ public class Team13GeneralHomeController {
 		 model.addAttribute("shohinData{" + i + "]",shohin);
 	 }
 	 
-	 if(team13UserInfoSession.getCartInfo() != null) {
-		 team13UserInfoSession.setCartInfo(null);
-	 }
+//	 if(team13UserInfoSession.getCartInfo() != null) {
+//		 team13UserInfoSession.setCartInfo(null);
+//	 }
 	 
 	 model.addAttribute("shohinData",shohinData);
 	 model.addAttribute("team13UserInfoSession",team13UserInfoSession);
