@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.ofg">
+<link rel="stylesheet" th:href="@{/Team13/Team13css/Team13Admin.css}">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -8,9 +9,14 @@
 	
 	<div th:replace="~{team13/Team13Header/Team13_Header_Admin :: Admin_Header}"></div>
 	
-	<h1>更新完了しました！</h1>
-	<a th:href="@{/Team13_Admin_Home}">ホームへ戻る</a>
-	
+		<div class="confirm-card">
+			<div class="text-center">
+				
+				<h1 class="complete text-center">更新完了しました！</h1>
+				<a th:href="@{/Team13_Admin_Home}" class="home-link">ホームへ戻る</a>
+			
+			</div>
+		</div>
 		
 </body>
 </html>

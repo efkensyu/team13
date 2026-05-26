@@ -1,20 +1,27 @@
 package com.example.demo.team13.Team13Controller.Team13Admin.Team13Stock;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+
+import com.example.demo.team13.Session.Team13AdminInfoSession;
 
 
 @Controller
 public class Team13UpdateStockCompleteController {
 //	private final Team13CartService team13CartService;
 	
+	@Autowired Team13AdminInfoSession team13AdminInfoSession;
 	
-
 	@GetMapping("/Team13_Update_Stock_Complete")
 	public String index(Model model) {
-		
-		return "team13/Team13Admin/Team13_Home";
+	
+	if (team13AdminInfoSession.getKanri_id() == null) {
+        return "redirect:/Team13_Admin_Login";
+    }
+	
+		return "redirect:/Team13_Home";
 	}
 	
 }

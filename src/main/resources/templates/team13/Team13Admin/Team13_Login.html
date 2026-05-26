@@ -3,36 +3,35 @@
 <link rel="stylesheet" th:href="@{/Team13/Team13css/Team13Admin.css}">
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>管理者ログイン</title>
 </head>
 <body class="login">
-	
+    
 	<div class="center-box">
-	    <form method="post" th:action="@{/Team13_Admin_Login}" th:object="${Adminlogin}">
+	    <div class="login-card">
+	        <form method="post" th:action="@{/Team13_Admin_Login}" th:object="${Adminlogin}">
+	            <div class="white-text">
+	                <h1 class="login_title">管理者ログイン</h1>
+	                <p>管理者情報を入力してください</p>
+	            </div>
 
-	        <div class="white-text">
-	            <h1 class="login_title">管理者ログイン</h1>
-	            <p>管理者情報を入力してください</p>
-	        </div>
+	            <p>認証ID:<input type="text" th:field="*{kanriId}"></p>
+	            <th:block th:if="${#fields.hasErrors('kanriId')}">
+	                <p class="error-text" th:errors="*{kanriId}"></p>
+	            </th:block>
 
-	        <p class="white-text">認証ID:<input type="text" th:field="*{kanriId}"></p>
-	        <th:block th:if="${#fields.hasErrors('kanriId')}">
-	         <p class="error-text" th:errors="*{kanriId}"></p>
-	        </th:block>
+	            <p>パスワード:<input type="password" th:field="*{kanriPass}"></p>
+	            <th:block th:if="${#fields.hasErrors('kanriPass')}">
+	                <p class="error-text" th:errors="*{kanriPass}"></p>
+	            </th:block>
 
-	        <p class="white-text">パスワード:<input type="password" th:field="*{kanriPass}"></p>
-	        <th:block th:if="${#fields.hasErrors('kanriPass')}">
-	            <p class="error-text" th:errors="*{kanriPass}"></p>
-	        </th:block>
+	            <div class="button-area">
+	                <button class="bold_btn">ログイン</button>
+	            </div>
 
-	        <br>
-	        <button class="bold_btn">ログイン</button>
-
-	        <p class="error-text" th:text="${error}"></p>
-
-	    </form>
+	            <p class="error-text" th:text="${error}"></p>
+	        </form>
+	    </div>
 	</div>
-
 </body>
 </html>
-

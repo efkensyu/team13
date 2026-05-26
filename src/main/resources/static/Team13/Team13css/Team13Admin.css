@@ -1,47 +1,36 @@
 @charset "UTF-8";
 
-/*共通スタイル*/
+/* =========================================================
+   共通スタイル
+   ========================================================= */
 
-/* ================================
-   フォントの大本（全体設定）
-   ================================ */
-/* Google Fonts の Noto Sans JP を読み込む */
+/* フォント・背景 */
 html, body {
-    font-family: 
-        "Yu Gothic Medium", 
-        "Yu Gothic", 
-        "Meiryo", 
-        sans-serif;
-		
-	background-color: #eeeeee;
+    font-family: "Yu Gothic Medium", "Yu Gothic", "Meiryo", sans-serif;
+    background-color: #eeeeee;
 }
 
-
-
-h2{
-	color:#000ac4;
-	text-align: center;
+/* 見出し */
+h2 {
+    color: #000ac4;
+    text-align: center;
 }
 
-.white-text {
-    color: white;
-}
+/* テキスト色 */
+.white-text { color: white; }
+.error-text { color: red !important; }
 
-.error-text {
-    color: red !important;
-}
-/*ポジション修正*/
-.text-center {
-    text-align: center; 
-}
+/* 中央寄せ */
+.text-center { text-align: center; }
 
 .center-box {
     display: flex;
-    justify-content: center; /* 横中央 */
-    align-items: center;     /* 縦中央 */
+    justify-content: center;
+    align-items: center;
     height: 100vh;
 }
 
+/* ボタン配置 */
 .button-area {
     display: flex;
     justify-content: center;
@@ -49,43 +38,51 @@ h2{
     margin-top: 25px;
 }
 
-
+/* 小ボタン */
 .btn-sm {
-    padding: 0.3em 0.8em;  
-    min-width: 80px;       
+    padding: 0.3em 0.8em;
+    min-width: 80px;
 }
 
+/* テキストサイズ */
 .text-center p.big {
-    font-size: 1.5rem;   
-    font-weight: 600;   
-    color: #333;        
-    display: block;     
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
     margin-bottom: 5px;
 }
 
 .stock-count {
-    font-size: 1.8rem;   
-    font-weight: 700;    
-    color: black;      
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: black;
     margin-top: 10px;
 }
 
+form-login {
+    text-align: center;
+}
 
 
-/*-----------------------通常ボタン-----------------------------------*/
+/* =========================================================
+   ボタン類
+   ========================================================= */
+
+/* 通常ボタン */
 .bold_btn {
     display: inline-flex;
     justify-content: center;
     align-items: center;
     position: relative;
     padding: .6em 1.2em;
-    overflow: hidden;
     border: 1px solid #000ac4;
     border-radius: 5px;
     background-color: #fff;
     color: #000ac4;
     cursor: pointer;
-	margin: 0;  
+    overflow: hidden;
+    margin: 0;
+    z-index: 0; /* ← 追加：疑似要素が隠れないようにする */
 }
 
 .bold_btn::before {
@@ -93,11 +90,11 @@ h2{
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -1;
     width: 0;
     height: 100%;
     background-color: #000ac4;
     transition: width .3s ease;
+    z-index: -1; /* ← ボタンの下に配置 */
 }
 
 .bold_btn:hover {
@@ -107,7 +104,8 @@ h2{
 .bold_btn:hover::before {
     width: 100%;
 }
-/*-----------------------通常ボタン-----------------------------------*/
+
+/* 追加ボタン */
 .add_btn {
     padding: 0.5em 1.2em;
     border: 1px solid #000ac4;
@@ -118,7 +116,7 @@ h2{
     cursor: pointer;
 }
 
-/*-----------------------戻るボタン-----------------------------------*/
+/* 戻るボタン */
 .back_btn {
     padding: 0.5em 1.2em;
     border: 1px solid #ccc;
@@ -134,12 +132,20 @@ h2{
     background-color: #e0e0e0;
 }
 
-a.logout-link {
-    color: #e53935;
+/* =========================================================
+   リンク（ログアウト・ホーム）
+   ========================================================= */
+
+a.logout-link,
+a.home-link {
     font-weight: 600;
-    position: relative;   /* ← これが必須 */
+    position: relative;
     padding-bottom: 4px;
     text-decoration: none;
+}
+
+a.logout-link {
+    color: #e53935;
 }
 
 a.logout-link::after {
@@ -154,17 +160,43 @@ a.logout-link::after {
 }
 
 a.logout-link:hover {
-    color: #ff1744;       /* ホバー時の濃い赤 */
+    color: #ff1744;
 }
 
 a.logout-link:hover::after {
     width: 100%;
 }
 
-/* 商品情報部分（画像＋テキスト＋入力欄）をまとめる */
+a.home-link {
+    color: #000ac4;
+}
+
+a.home-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #000ac4;
+    transition: width 0.3s ease;
+}
+
+a.home-link:hover {
+    color: #1579c0;
+}
+
+a.home-link:hover::after {
+    width: 100%;
+}
+
+/* =========================================================
+   商品カード
+   ========================================================= */
+
 .product-card {
     display: flex;
-    justify-content: space-between; /* 左右に分ける */
+    justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
     margin: 15px 0;
@@ -181,8 +213,8 @@ a.logout-link:hover::after {
 }
 
 .product-card span {
-    font-size: 1.3rem;   
-    font-weight: 600;    
+    font-size: 1.3rem;
+    font-weight: 600;
     color: #333;
 }
 
@@ -193,8 +225,8 @@ a.logout-link:hover::after {
 }
 
 .product-actions {
-	font-size: 1.3rem;   
-	font-weight: 600;
+    font-size: 1.3rem;
+    font-weight: 600;
     display: flex;
     align-items: center;
     gap: 1em;
@@ -206,24 +238,32 @@ a.logout-link:hover::after {
     font-size: 1rem;
 }
 
+/* =========================================================
+   画面別スタイル
+   ========================================================= */
 
-
-
-/*画面ごと*/
-
-/*------------ログイン------------------------*/
+/* ログイン画面 */
 body.login {
-    background-image: url("/images/ログイン用会社画像.png"); /* 写真のパス */
-    background-size: cover;       /* 画面いっぱいに拡大縮小 */
-    background-position: center;  /* 中央に配置 */
-    background-repeat: no-repeat; /* 繰り返しなし */
-    height: 100vh;                /* 画面全体を使う */
+    background-image: url("/images/ログイン用会社画像.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-	}
-	
-/*------------確認カードスタイル------------------------*/
+}
+
+.login-card {
+    background-color: rgba(240, 240, 240, 0.9); /* 半透明の灰色 */
+    width: 400px;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+/* 確認画面 */
 .confirm-card {
     width: 600px;
     margin: 50px auto;
@@ -246,7 +286,44 @@ body.login {
     gap: 1em;
     margin-top: 20px;
 }
-/*------------ヘッダー全体 -----------------*/
+
+/* 完了画面 */
+.complete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 8px;
+    color: #333333;
+}
+
+.complete::before {
+    width: 0.8em;
+    height: 0.4em;
+    border-bottom: 4px solid #2589d0;
+    border-left: 4px solid #2589d0;
+    transform: rotate(-45deg) translate(2px, -2px);
+    content: '';
+}
+
+/* 管理者情報 */
+.info-card {
+    background-color: #fff;
+    width: 500px;
+    margin: 40px auto;
+    padding: 25px 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.info-card p {
+    font-size: 1.1rem;
+    margin: 12px 0;
+    color: #333;
+}
+
+/* =========================================================
+   ヘッダー
+   ========================================================= */
 
 .bold_header {
     display: flex;
@@ -256,7 +333,7 @@ body.login {
     background-color: #000ac4;
     color: white;
     height: 100px;
-    font-weight: 700; 
+    font-weight: 700;
 }
 
 .header_right {
@@ -265,7 +342,7 @@ body.login {
 }
 
 .header_right a {
-    color: white;          
+    color: white;
     text-decoration: none;
     position: relative;
     padding-bottom: 4px;
