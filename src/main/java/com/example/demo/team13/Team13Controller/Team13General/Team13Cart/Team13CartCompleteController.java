@@ -26,8 +26,8 @@ public class Team13CartCompleteController {
 	private List<Team13CartInfo> cartList;
 	@PostMapping("/Team13_Cart_Complete")
 	public String index() {
-		cartList = team13UserInfoSession.getCartInfo();
-		team13CartCompleteService.InsertIntoOrderTable(cartList);
+//		cartList = team13UserInfoSession.getCartInfo();
+		team13CartCompleteService.InsertIntoOrderTable(team13UserInfoSession);
 		return "team13/Team13General/Team13_Cart_Complete";
 	}
 	
