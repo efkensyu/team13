@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.ofg">
+<link rel="stylesheet" th:href="@{/Team13/Team13css/Team13General.css}">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -10,11 +11,21 @@
 			
 	</div>
 	
-	<form method="post" th:action="@{/Team13_General_Logout}">
-	<h1>ログアウト確認</h1>
-		<h2>ログアウトしますか？</h2>
-	<input type="submit" name="back" value="戻る">	
-	<input type="submit" name="logout" value="ログアウト">
-	</form>
+		<div class="confirm-card">
+			
+				<div class="text-center">
+					
+					<h1 class="complete text-center">ログアウトしますか？</h1>
+					<a class="logout-link" th:href="@{/Team13_General_Logout}">ログアウト</a>
+				
+				</div>
+			
+			<form method="post" th:action="@{/Team13_General_Logout}">
+				
+				<input type="submit" name="back" value="戻る">	
+	
+			</form>
+		</div>
+		
 </body>
 </html>
