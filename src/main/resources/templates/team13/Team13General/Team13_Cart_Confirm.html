@@ -9,18 +9,38 @@
 			
 		</div>
 			<h1>カート商品確認画面</h1>
-		<th:block th:each="data:${cartList}" th:object="${data}">
-			<img th:src="@{*{shohin_photo}}">
-			<p th:text="*{shohin_nm} + *{shohin_num} + 個"></p>
+<!--		<th:block th:each="data:${cartList}" th:object="${data}">-->
+<!--			<img th:src="@{*{shohin_photo}}">-->
+<!--			<p th:text="*{shohin_nm}"></p>-->
 			
-		</th:block>
+<!--			<input type="hidden" name="shohin_id" th:value="*{shohin_id}">-->
+								
+<!--								<input type="number" name="count" th:value="*{shohin_num}" min="0" required>-->
+								
+<!--								<input type="hidden" name="shohin_id" th:value="*{shohin_id}">-->
+								
+								
+<!--		</th:block>-->
 		
 
 	<form>
-		<button type="submit"  th:formaction="@{/Team13_General_Home}" formmethod="get">
+		<th:block th:each="data:${cartList}" th:object="${data}">
+			
+			<img th:src="@{*{shohin_photo}}">
+			
+			<p th:text="*{shohin_nm}"></p>
+					
+			<input type="hidden" name="shohin_id" th:value="*{shohin_id}">
+										
+			<input type="number" name="count" th:value="*{shohin_num}" min="0" required>
+										
+		</th:block>
+		
+		<button type="submit" name="back" th:formaction="@{/Team13_General_Home}" formmethod="post">
 			戻る
 		</button>
-		<button type="submit" name="complete" th:formaction="@{/Team13_Cart_Complete}" formmethod="post" value="shohin_id">
+		
+		<button type="submit" name="complete" th:formaction="@{/Team13_Cart_Complete}" formmethod="post">
 			完了
 		</button>
 	</form>
