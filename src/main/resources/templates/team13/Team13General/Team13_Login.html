@@ -3,28 +3,40 @@
 <link rel="stylesheet" th:href="@{/team13/Team13css/Team13General.css}">
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>ユーザログイン</title>
 </head>
 <body class="login">
+	
 	<div class="center-box">
-		
-		<form method="post" th:action="@{/Team13_General_Login}"th:object="${login}">
-			
-			<h1 class="login_title">ユーザログイン</h1>
-			
-			<p>ログイン情報を入力してください</p>
-			<p>社員ID:<input type="text" th:field="*{shainId}"></p>
-			<th:block th:if="${#fields.hasErrors('shainId')}" th:errors="*{shainId}"></th:block>
-			
-			<p>メールアドレス:<input type="text" th:field="*{shainEmail}"></p>
-			<th:block th:if="${#fields.hasErrors('shainEmail')}" th:errors="*{shainEmail}"></th:block>
-			
+		    <div class="login-card">
+		        <form method="post" th:action="@{/Team13_General_Login}"th:object="${login}">
+		            <div class="white-text">
+		                <h1 class="login_title">ユーザログイン</h1>
+		                <p>ユーザ情報を入力してください</p>
+		            </div>
 
-			
-			<button class="bold_btn">ログイン</button>
-			<p th:text="${error}"></p>
-		</form>
-		
-	</div>
+		           	社員ID<br>
+					
+					<!--エラーメッセージ-->
+					<th:block th:if="${#fields.hasErrors('shainId')}" th:errors="*{shainId}"></th:block>
+					
+					<p><input type="text" th:field="*{shainId}"></p>
+		            
+
+		            メールアドレス<br>
+					
+					<!--エラーメッセージ-->
+		            <th:block th:if="${#fields.hasErrors('shainEmail')}" th:errors="*{shainEmail}"></th:block>
+					
+					<p><input type="text" th:field="*{shainEmail}"></p>
+
+		            <div class="button-area">
+		                <button class="bold_btn">ログイン</button>
+		            </div>
+
+		            <p class="error-text" th:text="${error}"></p>
+		        </form>
+		    </div>
+		</div>
 </body>
 </html>

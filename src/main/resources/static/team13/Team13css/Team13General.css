@@ -272,10 +272,52 @@ a.home-link:hover::after {
 /* =========================================================
    画面別スタイル
    ========================================================= */
+   /* =========================================================
+      ヘッダー
+      ========================================================= */
+
+   .bold_header {
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       padding: 10px 20px;
+       background-color: #000ac4;
+       color: white;
+       height: 100px;
+       font-weight: 700;
+   }
+
+   .header_right {
+       display: flex;
+       gap: 2em;
+   }
+
+   .header_right a {
+       color: white;
+       text-decoration: none;
+       position: relative;
+       padding-bottom: 4px;
+       font-weight: 400;
+   }
+
+   .header_right a::after {
+       content: "";
+       position: absolute;
+       left: 0;
+       bottom: 0;
+       width: 0%;
+       height: 2px;
+       background-color: white;
+       transition: width 0.3s ease;
+   }
+
+   .header_right a:hover::after {
+       width: 100%;
+   }
 
 /* ログイン画面 */
 body.login {
-    background-image: url("/images/ログイン用会社画像.png");
+    background-image: url("/Team13/Team13images/Team13ログイン用会社画像.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -297,7 +339,7 @@ body.login {
 /* 確認画面 */
 .confirm-card {
     width: 600px;
-    margin: 50px auto;
+    margin: 50px auto 400px; /* ← 下に80pxの余白を追加 */
     padding: 30px 40px;
     background-color: #fff;
     border: 1px solid #ddd;
@@ -353,44 +395,92 @@ body.login {
 }
 
 /* =========================================================
-   ヘッダー
+   購入完了画面
    ========================================================= */
+   .complete_btn,
+   .complete_btn span {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+   }
 
-.bold_header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #000ac4;
-    color: white;
-    height: 100px;
-    font-weight: 700;
-}
+   .complete_btn {
+       position: relative;
+       width: 250px;
+       margin: 0 auto;
+       padding: 0;
+       border-radius: 5px;
+       border: none;
+       font-size: 1em;
+   }
 
-.header_right {
-    display: flex;
-    gap: 2em;
-}
+   .complete_btn::before {
+       position: absolute;
+       top: 7px;
+       z-index: -1;
+       width: 100%;
+       height: 100%;
+       border: 2px solid #000;
+       border-radius: inherit;
+       box-sizing: inherit;
+       box-shadow: 0 5px 0 0 rgba(0, 0, 0, .2);
+       background-color: #3bcf3e;
+       content: '';
+   }
 
-.header_right a {
-    color: white;
-    text-decoration: none;
-    position: relative;
-    padding-bottom: 4px;
-    font-weight: 400;
-}
+   .complete_btn span {
+       width: 100%;
+       padding: .9em 2em;
+       border: 2px solid #000;
+       border-radius: inherit;
+       background-color: #6bff6e;
+       color: #000;
+       font-weight: 600;
+       line-height: 1.5;
+   }
 
-.header_right a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0%;
-    height: 2px;
-    background-color: white;
-    transition: width 0.3s ease;
-}
+   .complete_btn::after {
+       display: inline-block;
+       transform: rotate(45deg);
+       width: 5px;
+       height: 5px;
+       margin-left: 10px;
+       border-top: 2px solid #000;
+       border-right: 2px solid #000;
+       content: '';
+   }
 
-.header_right a:hover::after {
-    width: 100%;
-}
+   .complete_btn::before {
+       transition: box-shadow .2s;
+       box-shadow: 0 3px 0 0 rgba(0, 0, 0, .2);
+   }
+
+   .complete_btn span {
+       transition: transform .2s;
+       transform: translateY(2px);
+   }
+   /* =========================================================
+      ログアウト画面
+      ========================================================= */
+	  .back-btn {
+	      display: inline-flex;
+	      align-items: center;
+	      gap: 6px;
+	      padding: 0.4em 0.8em;
+	      border: 1px solid #ccc;
+	      border-radius: 5px;
+	      background-color: #f0f0f0;
+	      color: #333;
+	      font-weight: 600;
+	      cursor: pointer;
+	      transition: background-color 0.3s ease, transform 0.2s ease;
+	      margin-bottom: 15px; /* 下に余白 */
+	  }
+
+	  .back-btn:hover {
+	      background-color: #e0e0e0;
+	      transform: translateX(-3px);
+	  }
+
+	  
+	  

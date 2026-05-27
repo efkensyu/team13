@@ -52,7 +52,7 @@ public class Team13AdminUpdateStockController {
 		
 		model.addAttribute("shohinData", shohinData);
 	
-    return "team13/Team13Admin/Team13_Admin_Home";
+    return "team13/Team13Admin/Team13_Home";
  
 	}
 

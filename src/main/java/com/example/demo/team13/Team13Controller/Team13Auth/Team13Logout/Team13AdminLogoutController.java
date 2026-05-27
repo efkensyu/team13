@@ -29,7 +29,7 @@ public class Team13AdminLogoutController {
         return "redirect:/Team13_Admin_Profile";
     }
     
-    @PostMapping(value="/Team13_Admin_Logout",params="logout")
+    @PostMapping("/Team13_Admin_Logout_Exec")
     public String sendlogout(HttpSession session) {
     	session.invalidate(); 
         return "redirect:/Team13_Admin_Login";
