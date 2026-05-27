@@ -38,7 +38,7 @@ public class Team13AdminHomeController {
 	 
 	}
 	
-	@PostMapping(value="/Team13_Update_Stock" ,params="shohin_id")
+	@PostMapping(value="/Team13_Update_Stock_Send" ,params="shohin_id")
 	public String send(@RequestParam("shohin_id") String shohin_id, @RequestParam("count") int count,Model model){
 		
 		Team13Shohin shohin = team13AdminHomeService.findById(shohin_id);

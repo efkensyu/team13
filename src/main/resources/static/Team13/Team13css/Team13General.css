@@ -193,50 +193,80 @@ a.home-link:hover::after {
 /* =========================================================
    商品カード
    ========================================================= */
+   /* グリッド全体 */
+   .product-grid {
+       display: grid;
+       grid-template-columns: repeat(3, 1fr); /* 上3 */
+       gap: 20px;
+       padding: 20px;
+   }
 
-.product-card {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
-    margin: 15px 0;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-}
+   /* 下段2にするためのレスポンシブ */
+   @media (max-width: 900px) {
+       .product-grid {
+           grid-template-columns: repeat(2, 1fr); /* タブレット：2列 */
+       }
+   }
 
-.product-info {
-    display: flex;
-    align-items: center;
-    gap: 1.2em;
-}
+   @media (max-width: 600px) {
+       .product-grid {
+           grid-template-columns: repeat(1, 1fr); /* スマホ：1列 */
+       }
+   }
 
-.product-card span {
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: #333;
-}
+   /* カード本体 */
+   .product-card {
+       background: #ffffff;
+       border-radius: 12px;
+       padding: 15px;
+       text-align: center;
+       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+       transition: 0.2s;
+   }
 
-.product-card img {
-    width: 120px;
-    height: auto;
-    border-radius: 5px;
-}
+   .product-card:hover {
+       transform: translateY(-4px);
+       box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+   }
 
-.product-actions {
-    font-size: 1.3rem;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 1em;
-}
+   /* 商品画像 */
+   .product-card img {
+       width: 100%;
+       height: auto;
+       border-radius: 8px;
+   }
 
-.product-card input[type="number"] {
-    width: 80px;
-    padding: 5px;
-    font-size: 1rem;
-}
+   /* 商品名 */
+   .product-card .name {
+       display: block;
+       font-size: 18px;
+       font-weight: bold;
+       margin-top: 10px;
+   }
+
+   /* 価格 */
+   .product-card .price {
+       display: block;
+       font-size: 16px;
+       color: #444;
+       margin-bottom: 10px;
+   }
+
+   /* 数量入力 */
+   .product-card input[type="number"] {
+       width: 60%;
+       padding: 5px;
+       margin-bottom: 10px;
+   }
+
+   /* 追加ボタン */
+   .product-card .add_btn {
+       width: 80%;
+       padding: 8px;
+       border-radius: 6px;
+       font-size: 14px;
+   }
+
 
 /* =========================================================
    画面別スタイル

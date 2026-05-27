@@ -23,28 +23,28 @@ public class Team13AdminUpdateStockController {
 	@Autowired Team13AdminInfoSession team13AdminInfoSession;
 	private final Team13UpdateStockService team13UpdateStockService;
 	
-	@GetMapping("/Team13_Admin_Update")
+	@GetMapping("/Team13_Update_Stock")
     public String logout(){
 	  //ログイン認証
     if (team13AdminInfoSession.getKanri_id() == null) {
         return "redirect:/Team13_Admin_Login";
     }
     	
-        return "team13/Team13_Admin_Home";
+        return "team13/Team13Admin/Team13_Update_Stock";
     }
 	
 	
-	@PostMapping(value="/Team13_Admin_Update", params="confirm")
+	@PostMapping(value="/Team13_Update_Stock", params="confirm")
 	
 	public String update_confirm(@RequestParam("shohin_id") String shohin_id, @RequestParam("count") int count,Model model){
 		
 		team13UpdateStockService.updateStock(shohin_id, count);
 		
-	 return "redirect:/Team13_Update_Stock_Complete";
+	 return "team13/Team13Admin/Team13_Update_Stock_Complete";
 	 
 	}
 	
-	@PostMapping(value="/Team13_Admin_Update", params="back")
+	@PostMapping(value="/Team13_Update_Stock", params="back")
 	
 	public String back_confirm(Model model){
 		
@@ -52,7 +52,7 @@ public class Team13AdminUpdateStockController {
 		
 		model.addAttribute("shohinData", shohinData);
 	
-    return "redirect:/Team13_Admin_Home";
+    return "team13/Team13Admin/Team13_Admin_Home";
  
 	}
 
