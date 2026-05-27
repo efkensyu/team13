@@ -18,15 +18,19 @@
 		           	社員ID<br>
 					
 					<!--エラーメッセージ-->
-					<th:block th:if="${#fields.hasErrors('shainId')}" th:errors="*{shainId}"></th:block>
+					<th:block th:if="${#fields.hasErrors('shainId')}">
+		                <p class="error-text" th:errors="*{shainId}"></p>
+		            </th:block>
 					
 					<p><input type="text" th:field="*{shainId}"></p>
-		            
+					
 
 		            メールアドレス<br>
 					
 					<!--エラーメッセージ-->
-		            <th:block th:if="${#fields.hasErrors('shainEmail')}" th:errors="*{shainEmail}"></th:block>
+					<th:block th:if="${#fields.hasErrors('shainEmail')}">
+		                <p class="error-text" th:errors="*{shainEmail}"></p>
+		            </th:block>
 					
 					<p><input type="text" th:field="*{shainEmail}"></p>
 
