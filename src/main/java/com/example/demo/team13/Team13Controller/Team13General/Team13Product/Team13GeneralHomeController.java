@@ -78,6 +78,7 @@ public class Team13GeneralHomeController {
 	    model.addAttribute("cartItem",cartItem);
 	    model.addAttribute("count",count);
 	    model.addAttribute("photo", team13GeneralHomeService.selectPhoto(shohin_id));
+	    System.out.println(cartList.getClass());
 	    return "team13/Team13General/Team13_Cart";
 	}
 

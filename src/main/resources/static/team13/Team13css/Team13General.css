@@ -317,7 +317,7 @@ a.home-link:hover::after {
 
 /* ログイン画面 */
 body.login {
-    background-image: url("/Team13/Team13images/Team13ログイン用会社画像.png");
+    background-image: url("/team13/Team13images/Team13ログイン用会社画像.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
