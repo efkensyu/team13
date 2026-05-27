@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.example.demo.team13.Session.Team13UserInfoSession;
 import com.example.demo.team13.Team13Controller.Team13General.Team13Cart.Team13CartInfo;
 import com.example.demo.team13.Team13Entity.Team13Order;
+import com.example.demo.team13.Team13Repository.Team13CartDBRepository;
 import com.example.demo.team13.Team13Repository.Team13OrderRepository;
 
 import lombok.RequiredArgsConstructor;
@@ -16,6 +17,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class Team13CartCompleteService {
 	private final Team13OrderRepository team13OrderRepository;
+	private final Team13CartDBRepository cartDBRepository;
 	public String InsertIntoOrderTable(Team13UserInfoSession userInfo) {
 //		System.out.println(userInfo);
 		Team13Order order = new Team13Order();
@@ -31,4 +33,10 @@ public class Team13CartCompleteService {
 			
 		return "Success";
 	}
+	
+	public String DeleteCartShohinRecord(String shain_id) {
+		cartDBRepository.DeleteFromCartShohinRecordByShainId(shain_id);
+		return "Success";
+	}
+	
 }
