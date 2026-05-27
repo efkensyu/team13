@@ -24,14 +24,16 @@ public class Team13AdminLogoutController {
         return "team13/Team13Admin/Team13_Logout";
     }
     
-    @PostMapping(value="/Team13_Admin_Logout",params="back")
-    public String backlogout() {
-        return "redirect:/Team13_Admin_Profile";
-    }
-    
     @PostMapping("/Team13_Admin_Logout_Exec")
     public String sendlogout(HttpSession session) {
     	session.invalidate(); 
         return "redirect:/Team13_Admin_Login";
     }
+    
+    @PostMapping(value="/Team13_Admin_Logout",params="back")
+    public String backlogout() {
+        return "redirect:/Team13_Admin_Profile";
+    }
+    
+
 }

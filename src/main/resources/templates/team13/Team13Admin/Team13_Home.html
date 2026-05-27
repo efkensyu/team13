@@ -30,7 +30,7 @@
     </form>
 
     <!-- ボールドペン -->
-    <form method="post" th:action="@{/Team13_Update_Stock}" class="product-card">
+    <form method="post" th:action="@{/Team13_Update_Stock_Send}" class="product-card">
         <div class="product-info">
             <img th:if="${shohinData[1].shohin_id == 'A0002'}"
                  th:src="@{/team13/Team13images/Team13ボールドペン.png}" alt="表示できません" title="ボールドペン">
@@ -46,7 +46,7 @@
     </form>
 
     <!-- ボルシャツ -->
-    <form method="post" th:action="@{/Team13_Update_Stock}" class="product-card">
+    <form method="post" th:action="@{Team13_Update_Stock_Send}" class="product-card">
         <div class="product-info">
             <img th:if="${shohinData[2].shohin_id == 'A0003'}"
                  th:src="@{/team13/Team13images/Team13ボルシャツ.png}" alt="表示できません" title="ボルシャツ">
@@ -62,7 +62,7 @@
     </form>
 
     <!-- ボルパカ -->
-    <form method="post" th:action="@{/Team13_Update_Stock}" class="product-card">
+    <form method="post" th:action="@{/Team13_Update_Stock_Send}" class="product-card">
         <div class="product-info">
             <img th:if="${shohinData[3].shohin_id == 'A0004'}"
                  th:src="@{/team13/Team13images/Team13ボルパカ.png}" alt="表示できません" title="ボルパカ">
@@ -78,7 +78,7 @@
     </form>
 
     <!-- 社章 -->
-    <form method="post" th:action="@{/Team13_Update_Stock}" class="product-card">
+    <form method="post" th:action="@{/Team13_Update_Stock_Send}" class="product-card">
         <div class="product-info">
             <img th:if="${shohinData[4].shohin_id == 'A0005'}"
                  th:src="@{/team13/Team13images/Team13社章.png}" alt="表示できません" title="社章">
