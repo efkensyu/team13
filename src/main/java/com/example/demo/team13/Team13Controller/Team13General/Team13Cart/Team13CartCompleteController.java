@@ -22,11 +22,15 @@ public class Team13CartCompleteController {
 	public Team13MakeReciptService rec;
 	@Autowired 
 	private Team13UserInfoSession team13UserInfoSession;
+	@Autowired
 	private final Team13CartCompleteService team13CartCompleteService;
 	private List<Team13CartInfo> cartList;
 	@PostMapping("/Team13_Cart_Complete")
 	public String index() {
+		String shain_id = team13UserInfoSession.getShain_id();
 		team13CartCompleteService.InsertIntoOrderTable(team13UserInfoSession);
+		team13CartCompleteService.DeleteCartShohinRecord(shain_id);
+		team13UserInfoSession.setCartInfo(null);
 		return "team13/Team13General/Team13_Cart_Complete";
 	}
 	
