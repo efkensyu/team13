@@ -44,7 +44,7 @@ public class Team13GeneralHomeController {
 			
 		} else {
 			for(Team13CartDB ca : cartInfo) {
-				String shohin_id = ca.getCart_shohin_id();
+				String shohin_id = ca.getShohin_id();
 				int shohin_num = ca.getCart_shohin_num();
 				Team13Shohin shohin_info = team13GeneralHomeService.findById(shohin_id);
 				List<Team13CartInfo> cart = new ArrayList<>();

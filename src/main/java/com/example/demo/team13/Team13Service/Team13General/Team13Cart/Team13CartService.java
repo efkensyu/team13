@@ -57,7 +57,7 @@ public class Team13CartService {
 
 	    Team13CartDB cart = new Team13CartDB();
 	    cart.setCart_shain_id(team13UserInfoSession.getShain_id());
-	    cart.setCart_shohin_id(cartItem.getShohin_id());
+	    cart.setShohin_id(cartItem.getShohin_id());
 	    cart.setCart_shohin_num(count);
 	    cartDBRepository.InsertIntoCartShohinTbl(cart);
 //	    cartDB.setCart_shain_id(team13UserInfoSession.getShain_id());

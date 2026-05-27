@@ -15,7 +15,7 @@ public class Team13CartDB {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int cart_id;
-	private String cart_shohin_id;
+	private String shohin_id;
 	private String cart_shain_id;
 	private int cart_shohin_num;
 }
