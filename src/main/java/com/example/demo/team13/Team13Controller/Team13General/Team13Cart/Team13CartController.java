@@ -17,6 +17,11 @@ public class Team13CartController {
 	@PostMapping(value="/Team13_Cart_Confirm")
 	public String confirm_buy(Model model){
 		List<Team13CartInfo> cartList = team13UserInfoSession.getCartInfo();
+		int sumPrice = 0;
+		for(Team13CartInfo ci : cartList) {
+			sumPrice = sumPrice + ci.getShohin_price() * ci.getShohin_num();
+		}
+		model.addAttribute("sumPrice",sumPrice);
 		model.addAttribute("cartList",cartList);
 		return "team13/Team13General/Team13_Cart_Confirm";
 	}
