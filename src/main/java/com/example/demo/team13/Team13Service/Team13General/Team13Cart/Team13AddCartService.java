@@ -46,7 +46,45 @@ public class Team13AddCartService {
 	        cartInfo.setShohin_photo(photo_path);
 	        cartList.add(cartInfo);
 	    }
-
+	    
+	    
 	    return cartList;
 	}
+	
+	
+//		public void upDateCartCount(Team13CartInfo cartInfo) {
+//			
+//			List<Team13CartInfo> cartList = team13UserInfoSession.getCartInfo();
+//			
+//			if(count <= 0) {
+//				
+//				return;
+//				
+//			}
+			
+//		for(Team13CartInfo info : cartList) {
+//			
+//			if(info.getShohin_id().equals(cartInfo.getShohin_id())) {
+//				
+//				info.setShohin_num(cartInfo.getShohin_num());
+//				
+//				break;
+//				
+//				}
+			
+			public void upDateCartCount(String shohin_id, int count) {
+
+			    List<Team13CartInfo> cartList = team13UserInfoSession.getCartInfo();
+
+			    for (Team13CartInfo info : cartList) {
+			        if (info.getShohin_id().equals(shohin_id)) {
+			            info.setShohin_num(count);
+			            break;
+			        }
+			    }
+			}
+			
+		
 }
+	
+

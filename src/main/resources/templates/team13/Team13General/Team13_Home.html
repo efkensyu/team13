@@ -16,32 +16,32 @@
 		<form method="post" th:action="@{/Team13_Cart}">
 			<img th:if="${shohinData[0].shohin_id == 'A0001'}" th:src="@{/Team13/Team13images/Team13ボルT.png}" alt="表示できません" style="max-width: 100%; height: auto;" title="ボルT">
 			<span>ボルT 965円</span>
-			<input type="number" name="count" min="0" required>
+			<input type="number" name="count" required>
 			<button type="submit" name="shohin_id" th:value="${shohinData[0].shohin_id}">追加</button>
 		</form>
 		<form method="post" th:action="@{/Team13_Cart}">			
 			<img th:if="${shohinData[1].shohin_id == 'A0002'}" th:src="@{/Team13/Team13images/Team13ボールドペン.png}" style="max-width: 100%; height: auto;" title="ボールドペン">
 			<span>ボールドペン 816円</span>
-			<input type="number" name="count" min="0" required>
+			<input type="number" name="count" required>
 			<button type="submit" name="shohin_id" th:value="${shohinData[1].shohin_id}">追加</button>
 		</form>
 		<form method="post" th:action="@{/Team13_Cart}">	
 			<img th:if="${shohinData[2].shohin_id == 'A0003'}" th:src="@{/Team13/Team13images/Team13ボルシャツ.png}" alt="表示できません" style="max-width: 100%; height: auto;" title="ボルシャツ">
 			<span>ボルシャツ 1200円</span>
-			<input type="number" name="count" min="0" required>
+			<input type="number" name="count" required>
 			<button type="submit" name="shohin_id" th:value="${shohinData[2].shohin_id}">追加</button>
 		</form>	
 		<br>	
 		<form method="post" th:action="@{/Team13_Cart}">
 			<img th:if="${shohinData[3].shohin_id == 'A0004'}" th:src="@{/Team13/Team13images/Team13ボルパカ.png}" alt="表示できません" style="max-width: 100%; height: auto;" title="ボルパカ">
 			<span>ボルパカ 2595円</span>
-			<input type="number" name="count" min="0" required>
+			<input type="number" name="count" required>
 			<button type="submit" name="shohin_id" th:value="${shohinData[3].shohin_id}">追加</button>
 		</form>	
 		<form method="post" th:action="@{/Team13_Cart}">
 			<img th:if="${shohinData[4].shohin_id == 'A0005'}" th:src="@{/Team13/Team13images/Team13社章.png}" alt="表示できません" style="max-width: 100%; height: auto;" title="社章">
 			<span>社章 726円</span>
-			<input type="number" name="count" min="0" required>
+			<input type="number" name="count" required>
 			<button type="submit" name="shohin_id" th:value="${shohinData[4].shohin_id}">追加</button>
 		</form>
 		<br>
