@@ -22,9 +22,10 @@
         </div>
 
         <div class="product-actions">
-            数量：<input type="number" name="count" required>
+			<p>在庫数：<th:block th:text="${shohinData[0].shohin_stock}"></th:block>
+            　　追加：<input type="number" name="count" required>
             <button class="add_btn btn-sm" type="submit" name="shohin_id"
-                    th:value="${shohinData[0].shohin_id}">更新</button>
+                    th:value="${shohinData[0].shohin_id}">更新</button></p>
         </div>
     </form>
 
@@ -37,7 +38,8 @@
         </div>
 
         <div class="product-actions">
-            数量：<input type="number" name="count" required>
+			<p>在庫数：<th:block th:text="${shohinData[1].shohin_stock}"></th:block>
+			 　　追加：<input type="number" name="count" required>
             <button class="add_btn btn-sm" type="submit" name="shohin_id"
                     th:value="${shohinData[1].shohin_id}">更新</button>
         </div>
@@ -52,7 +54,8 @@
         </div>
 
         <div class="product-actions">
-            数量：<input type="number" name="count" required>
+			<p>在庫数：<th:block th:text="${shohinData[2].shohin_stock}"></th:block>
+			 　　追加：<input type="number" name="count" required>
             <button class="add_btn btn-sm" type="submit" name="shohin_id"
                     th:value="${shohinData[2].shohin_id}">更新</button>
         </div>
@@ -67,7 +70,8 @@
         </div>
 
         <div class="product-actions">
-            数量：<input type="number" name="count" required>
+			<p>在庫数：<th:block th:text="${shohinData[3].shohin_stock}"></th:block>
+			 　　追加：<input type="number" name="count" required>
             <button class="add_btn btn-sm" type="submit" name="shohin_id"
                     th:value="${shohinData[3].shohin_id}">更新</button>
         </div>
@@ -82,7 +86,8 @@
         </div>
 
         <div class="product-actions">
-            数量：<input type="number" name="count" required>
+			<p>在庫数：<th:block th:text="${shohinData[4].shohin_stock}"></th:block>
+			　　追加：<input type="number" name="count" required>
             <button class="add_btn btn-sm" type="submit" name="shohin_id"
                     th:value="${shohinData[4].shohin_id}">更新</button>
         </div>
