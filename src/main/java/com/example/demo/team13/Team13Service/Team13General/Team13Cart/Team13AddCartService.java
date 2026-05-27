@@ -49,8 +49,7 @@ public class Team13AddCartService {
 	        cartInfo.setShohin_price(cartItem.getShohin_price());
 	        cartInfo.setShohin_num(count); // 新規なので count をセット
 	        cartInfo.setShohin_photo(photo_path);
-	        cartList.add(cartInfo);
-	    }
+	        cartList.add(cartInfo);}
 
 //	    Team13CartDB cart = new Team13CartDB();
 //	    cart.setCart_shain_id(team13UserInfoSession.getShain_id());
@@ -59,8 +58,23 @@ public class Team13AddCartService {
 //	    cartDBRepository.InsertIntoCartShohinTbl(cart);
 //	 　 cartDB.setCart_shain_id(team13UserInfoSession.getShain_id());
 	    
-	    
-
 	    return cartList;
+	    
 	}
+			
+			public void upDateCartCount(String shohin_id, int count) {
+
+			    List<Team13CartInfo> cartList = team13UserInfoSession.getCartInfo();
+
+			    for (Team13CartInfo info : cartList) {
+			        if (info.getShohin_id().equals(shohin_id)) {
+			            info.setShohin_num(count);
+			            break;
+			        }
+			    }
+			}
+			
+		
 }
+	
+
