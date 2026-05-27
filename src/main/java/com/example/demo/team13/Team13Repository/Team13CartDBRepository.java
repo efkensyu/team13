@@ -1,5 +1,7 @@
 package com.example.demo.team13.Team13Repository;
 
+import java.util.List;
+
 import jakarta.transaction.Transactional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -33,8 +35,8 @@ public interface Team13CartDBRepository extends JpaRepository<Team13CartDB,Integ
 	public void DeleteFromCartShohinRecordByShainId(@Param("shain_id") String shain_id);
 	
 	@Query(value="""
-		    select from team13_cart_shohin_tbl
+		    select * from team13_cart_shohin_tbl
 		    where cart_shain_id = :shain_id
 		    """, nativeQuery=true)
-	public String findByCartShainIdEquals(@Param("shain_id")String shain_id);
+	public List<Team13CartDB> findByCartShainId(@Param("shain_id")String shain_id);
 }
