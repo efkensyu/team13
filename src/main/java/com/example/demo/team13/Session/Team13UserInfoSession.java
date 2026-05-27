@@ -21,4 +21,5 @@ public class Team13UserInfoSession implements Serializable{
 	private String shain_tell;
 	private String shain_email;
 	private List<Team13CartInfo> cartInfo;
+	private int comp_flag;
 }

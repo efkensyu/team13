@@ -30,7 +30,7 @@ public class Team13CartCompleteController {
 		String shain_id = team13UserInfoSession.getShain_id();
 		team13CartCompleteService.InsertIntoOrderTable(team13UserInfoSession);
 		team13CartCompleteService.DeleteCartShohinRecord(shain_id);
-		team13UserInfoSession.setCartInfo(null);
+		team13UserInfoSession.setComp_flag(1);
 		return "team13/Team13General/Team13_Cart_Complete";
 	}
 	
@@ -38,7 +38,6 @@ public class Team13CartCompleteController {
 	public void recipit(HttpServletResponse response) throws IOException {
 		cartList = team13UserInfoSession.getCartInfo();
 		rec.makeXSSF(response,cartList);
-			
 	}
 	
 }

@@ -27,7 +27,10 @@ public class Team13GeneralHomeController {
 	
 	@GetMapping("/Team13_General_Home")
 	public String add(Model model){
-		
+	if(team13UserInfoSession.getComp_flag() == 1) {
+		 team13UserInfoSession.setCartInfo(null);
+		 team13UserInfoSession.setComp_flag(0);
+	 }
 	 List<Team13Shohin> shohinData = team13GeneralHomeService.findAll();
 	 
 	 for(int i = 0; i < shohinData.size(); i ++) {
@@ -35,9 +38,7 @@ public class Team13GeneralHomeController {
 		 model.addAttribute("shohinData{" + i + "]",shohin);
 	 }
 	 
-//	 if(team13UserInfoSession.getCartInfo() != null) {
-//		 team13UserInfoSession.setCartInfo(null);
-//	 }
+	 
 	 
 	 model.addAttribute("shohinData",shohinData);
 	 model.addAttribute("team13UserInfoSession",team13UserInfoSession);
