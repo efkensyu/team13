@@ -30,19 +30,19 @@ public class Team13GeneralHomeService {
 		
 		switch (shohin_id) {
 		case "A0001":{
-			return "/Team13/Team13images/Team13ボルT.png";
+			return "/team13/Team13images/Team13ボルT.png";
 		}
 		case "A0002":{
-			return "/Team13/Team13images/Team13ボールドペン.png";
+			return "/team13/Team13images/Team13ボールドペン.png";
 		}
 		case "A0003":{
-			return "/Team13/Team13images/Team13ボルシャツ.png";
+			return "/team13/Team13images/Team13ボルシャツ.png";
 		}
 		case "A0004":{
-			return "/Team13/Team13images/Team13ボルパカ.png";
+			return "/team13/Team13images/Team13ボルパカ.png";
 		}
 		case "A0005":{
-			return "/Team13/Team13images/Team13社章.png";
+			return "/team13/Team13images/Team13社章.png";
 		}
 		}
 		
@@ -55,19 +55,19 @@ public class Team13GeneralHomeService {
 		String shohin_id = cartList.get(i).getShohin_id();
 		switch (shohin_id) {
 		case "A0001":{
-			return "/Team13/Team13images/Team13ボルT.png";
+			return "/team13/Team13images/Team13ボルT.png";
 		}
 		case "A0002":{
-			return "/Team13/Team13images/Team13ボールドペン.png";
+			return "/team13/Team13images/Team13ボールドペン.png";
 		}
 		case "A0003":{
-			return "/Team13/Team13images/Team13ボルシャツ.png";
+			return "/team13/Team13images/Team13ボルシャツ.png";
 		}
 		case "A0004":{
-			return "/Team13/Team13images/Team13ボルパカ.png";
+			return "/team13/Team13images/Team13ボルパカ.png";
 		}
 		case "A0005":{
-			return "/Team13/Team13images/Team13社章.png";
+			return "/team13/Team13images/Team13社章.png";
 		}
 		}
 	}

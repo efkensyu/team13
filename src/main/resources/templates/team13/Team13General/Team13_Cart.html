@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.ofg">
-<link rel="stylesheet" th:href="@{/Team13/Team13css/Team13General.css}">
+<link rel="stylesheet" th:href="@{/team13/Team13css/Team13General.css}">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -17,7 +17,7 @@
 			<p >こちらの商品を追加しました!</p>
 			<th:block th:object="${cartItem}">
 				<h1 th:text="*{shohin_nm} + ${count} + 個"></h1>
-				<img th:src="@{${photo}}">
+				<img th:src="${photo}">
 			</th:block>
 		</div>
 				
