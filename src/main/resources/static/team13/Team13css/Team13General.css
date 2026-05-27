@@ -1,0 +1,486 @@
+@charset "UTF-8";
+
+/* =========================================================
+   共通スタイル
+   ========================================================= */
+
+/* フォント・背景 */
+html, body {
+    font-family: "Yu Gothic Medium", "Yu Gothic", "Meiryo", sans-serif;
+    background-color: #eeeeee;
+	padding-bottom: 80px;
+	
+}
+
+/* 見出し */
+h2 {
+    color: #000ac4;
+    text-align: center;
+}
+
+/* テキスト色 */
+.white-text { color: white; }
+.error-text { color: red !important; }
+
+/* 中央寄せ */
+.text-center { text-align: center; }
+
+.center-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* ボタン配置 */
+.button-area {
+    display: flex;
+    justify-content: center;
+    gap: 1.5em;
+    margin-top: 25px;
+}
+
+/* 小ボタン */
+.btn-sm {
+    padding: 0.3em 0.8em;
+    min-width: 80px;
+}
+
+/* テキストサイズ */
+.text-center p.big {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.stock-count {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: black;
+    margin-top: 10px;
+}
+
+form-login {
+    text-align: center;
+}
+
+
+/* =========================================================
+   ボタン類
+   ========================================================= */
+
+/* 通常ボタン */
+.bold_btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: .6em 1.2em;
+    border: 1px solid #000ac4;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #000ac4;
+    cursor: pointer;
+    overflow: hidden;
+    margin: 0;
+    z-index: 0; /* ← 追加：疑似要素が隠れないようにする */
+}
+
+.bold_btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #000ac4;
+    transition: width .3s ease;
+    z-index: -1; /* ← ボタンの下に配置 */
+}
+
+.bold_btn:hover {
+    color: #fff;
+}
+
+.bold_btn:hover::before {
+    width: 100%;
+}
+
+/* 追加ボタン */
+.add_btn {
+    padding: 0.5em 1.2em;
+    border: 1px solid #000ac4;
+    border-radius: 5px;
+    background-color: #000ac4;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* 戻るボタン */
+.back_btn {
+    padding: 0.5em 1.2em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    color: #333;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.back_btn:hover {
+    background-color: #e0e0e0;
+}
+
+/* =========================================================
+   リンク（ログアウト・ホーム）
+   ========================================================= */
+
+a.logout-link,
+a.home-link {
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 4px;
+    text-decoration: none;
+}
+
+a.logout-link {
+    color: #e53935;
+}
+
+a.logout-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #ff5252;
+    transition: width 0.3s ease;
+}
+
+a.logout-link:hover {
+    color: #ff1744;
+}
+
+a.logout-link:hover::after {
+    width: 100%;
+}
+
+a.home-link {
+    color: #000ac4;
+}
+
+a.home-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #000ac4;
+    transition: width 0.3s ease;
+}
+
+a.home-link:hover {
+    color: #1579c0;
+}
+
+a.home-link:hover::after {
+    width: 100%;
+}
+
+/* ================================
+   商品カード（完全修正版）
+================================ */
+/* 商品一覧のグリッド配置（PC用） */
+.product-grid {
+	display: grid;
+	 grid-template-columns: repeat(3, 300px); /* 3列固定 */
+	 column-gap: 100px; /* ← 横の間隔を広げる */
+	 row-gap: 50px;    /* ← 上下の間隔も少し広げる */
+	 justify-content: center;
+	 margin-top: 50px;
+	 transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* 商品カード本体 */
+.product-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 25px;
+    width: 300px;
+    min-height: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* 上下の要素を均等配置 */
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-6px) scale(1.02); /* ← 少し拡大して浮く */
+    box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+}
+
+/* カード内フォーム（縦並び） */
+.product-card form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: auto; /* ← 下寄せで位置を揃える */
+}
+
+/* 商品画像 */
+.product-card img {
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+    margin-bottom: 20px; /* ← 画像下の余白を少し広げる */
+}
+
+/* 商品名・価格 */
+.product-card span {
+    font-weight: 600;
+    color: #333;
+    font-size: 1.1rem;
+    margin-bottom: 10px; /* ← テキスト下の余白を統一 */
+    text-align: center;
+}
+
+/* 数量入力 */
+.product-card input[type="number"] {
+    width: 80px;
+    padding: 5px;
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 5px; /* ← 入力欄下の余白を統一 */
+}
+
+/* 追加ボタン */
+.product-card button {
+    margin-top: 5px;
+}
+
+
+
+
+/* =========================================================
+   画面別スタイル
+   ========================================================= */
+   /* =========================================================
+      ヘッダー
+      ========================================================= */
+
+   .bold_header {
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       padding: 10px 20px;
+       background-color: #000ac4;
+       color: white;
+       height: 100px;
+       font-weight: 700;
+   }
+
+   .header_right {
+       display: flex;
+       gap: 2em;
+   }
+
+   .header_right a {
+       color: white;
+       text-decoration: none;
+       position: relative;
+       padding-bottom: 4px;
+       font-weight: 400;
+   }
+
+   .header_right a::after {
+       content: "";
+       position: absolute;
+       left: 0;
+       bottom: 0;
+       width: 0%;
+       height: 2px;
+       background-color: white;
+       transition: width 0.3s ease;
+   }
+
+   .header_right a:hover::after {
+       width: 100%;
+   }
+
+/* ログイン画面 */
+body.login {
+    background-image: url("/Team13/Team13images/Team13ログイン用会社画像.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-card {
+    background-color: rgba(240, 240, 240, 0.9); /* 半透明の灰色 */
+    width: 400px;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+/* 確認画面 */
+.confirm-card {
+    width: 600px;
+    margin: 50px auto 400px; /* ← 下に80pxの余白を追加 */
+    padding: 30px 40px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+.confirm-card p {
+    font-size: 1.1rem;
+    margin: 10px 0;
+}
+
+.confirm-card .button-area {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin-top: 20px;
+}
+
+/* 完了画面 */
+.complete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 8px;
+    color: #333333;
+}
+
+.complete::before {
+    width: 0.8em;
+    height: 0.4em;
+    border-bottom: 4px solid #2589d0;
+    border-left: 4px solid #2589d0;
+    transform: rotate(-45deg) translate(2px, -2px);
+    content: '';
+}
+
+/* 管理者情報 */
+.info-card {
+    background-color: #fff;
+    width: 500px;
+    margin: 40px auto;
+    padding: 25px 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.info-card p {
+    font-size: 1.1rem;
+    margin: 12px 0;
+    color: #333;
+}
+
+/* =========================================================
+   購入完了画面
+   ========================================================= */
+   .complete_btn,
+   .complete_btn span {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+   }
+
+   .complete_btn {
+       position: relative;
+       width: 250px;
+       margin: 0 auto;
+       padding: 0;
+       border-radius: 5px;
+       border: none;
+       font-size: 1em;
+   }
+
+   .complete_btn::before {
+       position: absolute;
+       top: 7px;
+       z-index: -1;
+       width: 100%;
+       height: 100%;
+       border: 2px solid #000;
+       border-radius: inherit;
+       box-sizing: inherit;
+       box-shadow: 0 5px 0 0 rgba(0, 0, 0, .2);
+       background-color: #3bcf3e;
+       content: '';
+   }
+
+   .complete_btn span {
+       width: 100%;
+       padding: .9em 2em;
+       border: 2px solid #000;
+       border-radius: inherit;
+       background-color: #6bff6e;
+       color: #000;
+       font-weight: 600;
+       line-height: 1.5;
+   }
+
+   .complete_btn::after {
+       display: inline-block;
+       transform: rotate(45deg);
+       width: 5px;
+       height: 5px;
+       margin-left: 10px;
+       border-top: 2px solid #000;
+       border-right: 2px solid #000;
+       content: '';
+   }
+
+   .complete_btn::before {
+       transition: box-shadow .2s;
+       box-shadow: 0 3px 0 0 rgba(0, 0, 0, .2);
+   }
+
+   .complete_btn span {
+       transition: transform .2s;
+       transform: translateY(2px);
+   }
+   /* =========================================================
+      ログアウト画面
+      ========================================================= */
+	  .back-btn {
+	      display: inline-flex;
+	      align-items: center;
+	      gap: 6px;
+	      padding: 0.4em 0.8em;
+	      border: 1px solid #ccc;
+	      border-radius: 5px;
+	      background-color: #f0f0f0;
+	      color: #333;
+	      font-weight: 600;
+	      cursor: pointer;
+	      transition: background-color 0.3s ease, transform 0.2s ease;
+	      margin-bottom: 15px; /* 下に余白 */
+	  }
+
+	  .back-btn:hover {
+	      background-color: #e0e0e0;
+	      transform: translateX(-3px);
+	  }
+
+	  
+	  
