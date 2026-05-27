@@ -11,9 +11,12 @@
 	</div>
 	
 		<h3>購入完了しました！ないっそー</h3>
-		<button th:formaction="@{/Team13_General_Home}" th:formmethod="get">
+		<a th:href="@{/Team13_General_Home}">
 			ホームへ戻る
-		</button>
+		</a>
+<!--		<button th:formaction="@{/Team13_General_Home}" th:formmethod="get">-->
+<!--			ホームへ戻る-->
+<!--		</button>-->
 	<form method="post" th:action="@{/Team13_Recipt}">
 		<input type="submit" value="領収書作成"/>
 	</form>

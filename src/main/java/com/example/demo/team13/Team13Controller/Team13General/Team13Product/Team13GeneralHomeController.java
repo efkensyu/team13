@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import com.example.demo.team13.Session.Team13UserInfoSession;
 import com.example.demo.team13.Team13Controller.Team13General.Team13Cart.Team13CartInfo;
 import com.example.demo.team13.Team13Entity.Team13Shohin;
-import com.example.demo.team13.Team13Service.Team13General.Team13Cart.Team13AddCartService;
+import com.example.demo.team13.Team13Service.Team13General.Team13Cart.Team13CartService;
 import com.example.demo.team13.Team13Service.Team13General.Team13Product.Team13GeneralHomeService;
 
 import lombok.RequiredArgsConstructor;
@@ -25,7 +25,7 @@ public class Team13GeneralHomeController {
 	@Autowired
 	Team13UserInfoSession team13UserInfoSession;
 	private final Team13GeneralHomeService team13GeneralHomeService;
-	private final Team13AddCartService team13AddCartService;
+	private final Team13CartService team13AddCartService;
 	
 	//カート商品確認画面で変更した数量をホーム画面へ
 	@GetMapping(value="/Team13_General_Home", name="count")

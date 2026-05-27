@@ -6,9 +6,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 
 import com.example.demo.team13.Team13Entity.Team13Order;
 
+@Repository
 public interface Team13OrderRepository extends JpaRepository<Team13Order,Integer>{
 	@Modifying
 	@Transactional
