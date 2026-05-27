@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.ofg">
+<link rel="stylesheet" th:href="@{/team13/Team13css/Team13Admin.css}">
+<head>
+<meta charset="UTF-8">
+<title>ログアウト確認</title>
+</head>
+
+<body>
+
+    <!-- ★ 管理者ヘッダー -->
+    <div th:replace="~{team13/Team13Header/Team13_Header_Admin :: Admin_Header}"></div>
+
+    <div class="confirm-card">
+
+        <form method="post" th:action="@{/Team13_Admin_Logout}">
+            <button type="submit" name="back" class="back-btn">← </button>
+        </form>
+
+        <div class="text-center">
+            <h1 class="complete text-center">ログアウトしますか？</h1>
+
+            <a href="#" class="logout-link"
+               onclick="document.getElementById('adminLogoutForm').submit(); return false;">
+                ログアウト
+            </a>
+
+            <form id="adminLogoutForm" method="post" th:action="@{/Team13_Admin_Logout_Exec}" style="display:none;"></form>
+        </div>
+
+    </div>
+
+</body>
+</html>

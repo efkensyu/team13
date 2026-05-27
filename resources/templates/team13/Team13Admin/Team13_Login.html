@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.ofg">
+<link rel="stylesheet" th:href="@{/team13/Team13css/Team13Admin.css}">
+<head>
+<meta charset="UTF-8">
+<title>管理者ログイン</title>
+</head>
+<body class="login">
+    
+	<div class="center-box">
+	    <div class="login-card">
+			
+	        <form method="post" th:action="@{/Team13_Admin_Login}" th:object="${Adminlogin}">
+	            <div class="white-text">
+	                <h1 class="login_title">管理者ログイン</h1>
+	                <p>管理者情報を入力してください</p>
+	            </div>
+
+	           	認証ID<br>
+				
+				<!--エラーメッセージ-->
+				<th:block th:if="${#fields.hasErrors('kanriId')}">
+	                <p class="error-text" th:errors="*{kanriId}"></p>
+	            </th:block>
+				
+				<p><input type="text" th:field="*{kanriId}">	</p>
+	            
+
+	            パスワード<br>
+				
+				<!--エラーメッセージ-->
+	            <th:block th:if="${#fields.hasErrors('kanriPass')}">
+	                <p class="error-text" th:errors="*{kanriPass}"></p>
+	            </th:block>
+				
+				<p><input type="password" th:field="*{kanriPass}"></p>
+
+	            <div class="button-area">
+	                <button class="bold_btn">ログイン</button>
+	            </div>
+
+	            <p class="error-text" th:text="${error}"></p>
+	        </form>
+	    </div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.ofg">
+<link rel="stylesheet" th:href="@{/team13/Team13css/Team13General.css}">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div th:replace="~{team13/Team13Header/Team13_Header_General :: General_Header}">
+			
+		</div>	
+		<form>
+		    <div class="confirm-card">
+		        <h2>カート商品購入画面</h2>
+				
+			<div class="text-center">
+				<p>この商品を購入しますか？</p>
+				
+					<div class="button-area">
+			            <button class="back_btn" type="submit" name="back"
+			                    th:formaction="@{/Team13_General_Home}" formmethod="post">
+			                ホームへ戻る
+			            </button>
+	
+			            <button class="add_btn" type="submit" name="complete"
+			                    th:formaction="@{/Team13_Cart_Complete}" formmethod="post">
+			                購入する
+			            </button>
+			        </div>
+				
+		            <th:block th:each="data:${cartList}" th:object="${data}">
+		                <img th:src="@{*{shohin_photo}}">
+		                <p th:text="*{shohin_nm}"></p>
+		                <p th:text="|*{shohin_num} 個|"></p>
+		                <input type="hidden" name="shohin_id" th:value="*{shohin_id}">
+		                <input type="hidden" name="count" th:value="*{shohin_num}">
+		            </th:block>
+					<p th:text="${sumPrice} + 円"></p>
+		        </div>
+				
+		    </div>
+		</form>
+</body>
+</html>

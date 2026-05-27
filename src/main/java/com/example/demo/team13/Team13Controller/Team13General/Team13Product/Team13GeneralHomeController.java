@@ -32,6 +32,7 @@ public class Team13GeneralHomeController {
 	//カート商品確認画面で変更した数量をホーム画面へ
 	@GetMapping(value="/Team13_General_Home", name="count")
 	public String add(Model model){
+		
 	if(team13UserInfoSession.getComp_flag() == 1) {
 		 team13UserInfoSession.setCartInfo(null);
 		 team13UserInfoSession.setComp_flag(0);
@@ -39,16 +40,15 @@ public class Team13GeneralHomeController {
 	
 	if(team13UserInfoSession.getCartInfo() == null) {
 		List<Team13CartDB>cartInfo = team13CartService.findbyCartShainId(team13UserInfoSession.getShain_id());
-		System.out.println(cartInfo);
+		List<Team13CartInfo> cart = new ArrayList<>();
 		if(cartInfo == null) {
 			
 		} else {
 			for(Team13CartDB ca : cartInfo) {
+				System.out.println(ca);
 				String shohin_id = ca.getShohin_id();
 				int shohin_num = ca.getCart_shohin_num();
 				Team13Shohin shohin_info = team13GeneralHomeService.findById(shohin_id);
-				List<Team13CartInfo> cart = new ArrayList<>();
-				team13UserInfoSession.setCartInfo(cart);
 				Team13CartInfo ci = new Team13CartInfo();
 				ci.setShohin_id(shohin_id);
 				ci.setShohin_nm(shohin_info.getShohin_nm());
@@ -57,7 +57,7 @@ public class Team13GeneralHomeController {
 		        ci.setShohin_photo(team13GeneralHomeService.selectPhoto(shohin_id));
 				cart.add(ci);
 			}
-			
+			team13UserInfoSession.setCartInfo(cart);
 		}
 	}
 	 List<Team13Shohin> shohinData = team13GeneralHomeService.findAll();

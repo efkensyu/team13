@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.ofg">
+<link rel="stylesheet" th:href="@{/team13/Team13css/Team13Admin.css}">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<div th:replace="~{team13/Team13Header/Team13_Header_General :: General_Header}">
+			
+	</div>
+	
+	<div class="confirm-card">
+			<div class="text-center">
+				
+					<h1 class="complete text-center">購入完了しました！</h1>
+					<a th:href="@{/Team13_General_Home}" class="home-link">
+						ホームへ戻る
+					</a>
+					
+					
+					
+					<form method="post" th:action="@{/Team13_Recipt}">
+						<p>
+							<button class="complete_btn">
+							    <span>領収書作成はこちらから</span>
+							</button>
+						</p>
+					</form>
+		
+		</div>
+	</div>
+	
+</body>
+</html>

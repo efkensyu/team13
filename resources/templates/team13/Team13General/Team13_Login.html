@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.ofg">
+<link rel="stylesheet" th:href="@{/team13/Team13css/Team13General.css}">
+<head>
+<meta charset="UTF-8">
+<title>ユーザログイン</title>
+</head>
+<body class="login">
+	
+	<div class="center-box">
+		    <div class="login-card">
+		        <form method="post" th:action="@{/Team13_General_Login}"th:object="${login}">
+		            <div class="white-text">
+		                <h1 class="login_title">ユーザログイン</h1>
+		                <p>ユーザ情報を入力してください</p>
+		            </div>
+
+		           	社員ID<br>
+					
+					<!--エラーメッセージ-->
+					<th:block th:if="${#fields.hasErrors('shainId')}">
+		                <p class="error-text" th:errors="*{shainId}"></p>
+		            </th:block>
+					
+					<p><input type="text" th:field="*{shainId}"></p>
+					
+
+		            メールアドレス<br>
+					
+					<!--エラーメッセージ-->
+					<th:block th:if="${#fields.hasErrors('shainEmail')}">
+		                <p class="error-text" th:errors="*{shainEmail}"></p>
+		            </th:block>
+					
+					<p><input type="text" th:field="*{shainEmail}"></p>
+
+		            <div class="button-area">
+		                <button class="bold_btn">ログイン</button>
+		            </div>
+
+		            <p class="error-text" th:text="${error}"></p>
+		        </form>
+		    </div>
+		</div>
+</body>
+</html>

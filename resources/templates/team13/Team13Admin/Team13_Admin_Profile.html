@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.ofg">
+<link rel="stylesheet" th:href="@{/team13/Team13css/Team13Admin.css}">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<div th:replace="~{team13/Team13Header/Team13_Header_Admin :: Admin_Header}"></div>	
+				
+			<h2>管理者情報</h2>
+				
+			<div class="info-card">
+				<div class="text-center">
+				
+					<p th:text="|管理者ID：${admin.kanri_id}|"></p>
+				    <p th:text="|管理者名：${admin.kanri_nm}|"></p>
+				    <p th:text="|パスワード：${admin.kanri_pass}|"></p>
+				
+					<a class="logout-link" th:href="@{/Team13_Admin_Logout}">ログアウト</a>
+				</div>	
+			</div>
+						
+			
+</body>
+</html>

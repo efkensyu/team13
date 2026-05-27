@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.ofg">
+<head>
+<meta charset="UTF-8">
+<title>管理者ページ</title>
+<link rel="stylesheet" th:href="@{/team13/Team13css/Team13Admin.css}">
+</head>
+<body>
+	<div class="confirm-card">
+		<div class="text-center">
+            <h2>予期せぬエラーが発生しました。</h2>
+			
+			
+			<div th:if="${errorSource.contains('Team13Admin')}">
+			    <a th:href="@{/Team13_Admin_Login}" class="logout-link">管理者ログインへ戻る</a>
+			</div>
+
+			<div th:if="${errorSource.contains('Team13General')}">
+			    <a th:href="@{/Team13_General_Login}" class="logout-link">ユーザーログインへ戻る</a>
+			</div>
+			
+			<div th:if="${errorSource == null 
+	                    or (!errorSource.contains('Team13Admin') 
+	                    and !errorSource.contains('Team13General'))}">
+	            <p>管理者はこちら　→　<a th:href="@{/Team13_Admin_Login}" class="logout-link">管理者ログインへ</a></p>
+	            <p>ユーザーはこちら　→　<a th:href="@{/Team13_General_Login}" class="logout-link">ユーザーログインへ</a></p>
+	        </div>
+			
+			
+		</div>
+	</div>
+
+</body>
+</html>

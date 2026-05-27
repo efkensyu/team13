@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.ofg">
+<link rel="stylesheet" th:href="@{/team13/Team13css/Team13Admin.css}">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div th:replace="~{team13/Team13Header/Team13_Header_Admin :: Admin_Header}"></div>
+	<form method="post" th:action="@{/Team13_Update_Stock}">
+		
+		<div class="confirm-card">
+		    <h2>更新確認</h2>
+		
+				<div class="text-center">
+					
+					<p class="big">
+						<span th:text="${shohin.shohin_nm}"></span>
+					</p>
+					
+					<p>在庫数
+						<span th:text="${shohin.shohin_stock} + 個"></span>
+						　→　
+						<span class="stock-count" th:text="${shohin.shohin_stock + count} + 個"></span>
+					</p>
+					
+				</div>
+				
+				<input type="hidden" name="shohin_id" th:value="${shohin.shohin_id}">
+				<input type="hidden" name="count" th:value="${count}">
+				
+			<div class="button-area">		
+				<input class="back_btn" type="submit" name="back" value="戻る">
+				<input class="add_btn" type="submit" name="confirm"value="確認">
+			</div>
+			
+		</div>
+
+	</form>
+</body>
+</html>
