@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.ofg">
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" th:href="@{/Team13/Team13css/Team13General.css}">
+<link rel="stylesheet" th:href="@{/team13/Team13css/Team13General.css}">
 </head>
 <body>
 
@@ -18,7 +18,7 @@
 			<!--ボルT-->
 			<div class="product-card">
 				<form method="post" th:action="@{/Team13_Cart}">
-					<img th:if="${shohinData[0].shohin_id == 'A0001'}" th:src="@{/Team13/Team13images/Team13ボルT.png}" alt="表示できません" style="max-width: 100%; height: auto;" title="ボルT">
+					<img th:if="${shohinData[0].shohin_id == 'A0001'}" th:src="@{/team13/Team13images/Team13ボルT.png}" alt="表示できません" style="max-width: 100%; height: auto;" title="ボルT">
 					<span>ボルT<br>965円</span>
 					<input type="number" name="count" min="0" required>
 					<button class="add_btn btn-sm" type="submit" name="shohin_id" th:value="${shohinData[0].shohin_id}">追加</button>
@@ -28,7 +28,7 @@
 			<!--ボールドペン-->
 			<div class="product-card">
 				<form method="post" th:action="@{/Team13_Cart}">			
-					<img th:if="${shohinData[1].shohin_id == 'A0002'}" th:src="@{/Team13/Team13images/Team13ボールドペン.png}" style="max-width: 100%; height: auto;" title="ボールドペン">
+					<img th:if="${shohinData[1].shohin_id == 'A0002'}" th:src="@{/team13/Team13images/Team13ボールドペン.png}" style="max-width: 100%; height: auto;" title="ボールドペン">
 					<span>ボールドペン<br>816円</span>
 					<input type="number" name="count" min="0" required>
 					<button class="add_btn btn-sm" type="submit" name="shohin_id" th:value="${shohinData[1].shohin_id}">追加</button>
@@ -38,7 +38,7 @@
 			<!--ボルシャツ-->
 			<div class="product-card">
 				<form method="post" th:action="@{/Team13_Cart}">	
-					<img th:if="${shohinData[2].shohin_id == 'A0003'}" th:src="@{/Team13/Team13images/Team13ボルシャツ.png}" alt="表示できません" style="max-width: 100%; height: auto;" title="ボルシャツ">
+					<img th:if="${shohinData[2].shohin_id == 'A0003'}" th:src="@{/team13/Team13images/Team13ボルシャツ.png}" alt="表示できません" style="max-width: 100%; height: auto;" title="ボルシャツ">
 					<span>ボルシャツ<br>1200円</span>
 					<input type="number" name="count" min="0" required>
 					<button class="add_btn btn-sm" type="submit"name="shohin_id" th:value="${shohinData[2].shohin_id}">追加</button>
@@ -48,7 +48,7 @@
 			<!--ボルパカ-->
 			<div class="product-card">
 				<form method="post" th:action="@{/Team13_Cart}" >
-					<img th:if="${shohinData[3].shohin_id == 'A0004'}" th:src="@{/Team13/Team13images/Team13ボルパカ.png}" alt="表示できません" style="max-width: 100%; height: auto;" title="ボルパカ">
+					<img th:if="${shohinData[3].shohin_id == 'A0004'}" th:src="@{/team13/Team13images/Team13ボルパカ.png}" alt="表示できません" style="max-width: 100%; height: auto;" title="ボルパカ">
 					<span>ボルパカ<br>2595円</span>
 					<input type="number" name="count" min="0" required>
 					<button class="add_btn btn-sm" type="submit" name="shohin_id" th:value="${shohinData[3].shohin_id}">追加</button>
@@ -58,7 +58,7 @@
 			<!--社章-->
 			<div class="product-card">
 				<form method="post" th:action="@{/Team13_Cart}">
-					<img th:if="${shohinData[4].shohin_id == 'A0005'}" th:src="@{/Team13/Team13images/Team13社章.png}" alt="表示できません" style="max-width: 100%; height: auto;" title="社章">
+					<img th:if="${shohinData[4].shohin_id == 'A0005'}" th:src="@{/team13/Team13images/Team13社章.png}" alt="表示できません" style="max-width: 100%; height: auto;" title="社章">
 					<span>社章<br>726円</span>
 					<input type="number" name="count" min="0" required>
 					<button class="add_btn btn-sm" type="submit" name="shohin_id" th:value="${shohinData[4].shohin_id}">追加</button>
