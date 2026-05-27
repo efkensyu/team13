@@ -81,8 +81,8 @@ public class Team13CartService {
 		
 
 	
-	public String findbyCartShainIdEquals(String shain_id) {
-		return cartDBRepository.findByCartShainIdEquals(shain_id);
+	public List<Team13CartDB> findbyCartShainId(String shain_id) {
+		return cartDBRepository.findByCartShainId(shain_id);
 	}
 	
 }
