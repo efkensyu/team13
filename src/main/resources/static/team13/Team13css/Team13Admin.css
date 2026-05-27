@@ -19,7 +19,7 @@ h2 {
 /* テキスト色 */
 .white-text { color: white; }
 .error-text { color: red !important; }
-
+.normal-text{color: black;}
 /* 中央寄せ */
 .text-center { text-align: center; }
 
@@ -244,7 +244,8 @@ a.home-link:hover::after {
 
 /* ログイン画面 */
 body.login {
-    background-image: url("/team13/Team13images/Team13login.png");
+
+    background-image: url("/team13/Team13images/Team13_login.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -319,6 +320,13 @@ body.login {
     font-size: 1.1rem;
     margin: 12px 0;
     color: #333;
+}
+
+/* 文字に黒い縁取りを付ける */
+.text-stroke {
+    color: white;                     /* 文字の中の色 */
+    -webkit-text-stroke: 0.15px #000ac4;    /* 黒い縁取り */
+    font-weight: 700;
 }
 
 /* =========================================================

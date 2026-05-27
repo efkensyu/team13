@@ -197,6 +197,7 @@ a.home-link:hover::after {
 /* ================================
    商品カード（完全修正版）
 ================================ */
+
 /* 商品一覧のグリッド配置（PC用） */
 .product-grid {
 	display: grid;
@@ -319,7 +320,7 @@ a.home-link:hover::after {
 
 /* ログイン画面 */
 body.login {
-    background-image: url("/team13/Team13images/Team13login.png");
+    background-image: url("/team13/Team13images/Team13_login.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -337,6 +338,8 @@ body.login {
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     text-align: center;
 }
+
+
 
 /* 確認画面 */
 .confirm-card {
