@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.ofg">
+<link rel="stylesheet" th:href="@{/Team13/Team13css/Team13Admin.css}">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -10,15 +11,26 @@
 			
 	</div>
 	
-		<h3>購入完了しました！ないっそー</h3>
-		<a th:href="@{/Team13_General_Home}">
-			ホームへ戻る
-		</a>
-<!--		<button th:formaction="@{/Team13_General_Home}" th:formmethod="get">-->
-<!--			ホームへ戻る-->
-<!--		</button>-->
-	<form method="post" th:action="@{/Team13_Recipt}">
-		<input type="submit" value="領収書作成"/>
-	</form>
+	<div class="confirm-card">
+			<div class="text-center">
+				
+					<h1 class="complete text-center">購入完了しました！</h1>
+					<a th:href="@{/Team13_General_Home}" class="home-link">
+						ホームへ戻る
+					</a>
+					
+					
+					
+					<form method="post" th:action="@{/Team13_Recipt}">
+						<p>
+							<button class="complete_btn">
+							    <span>領収書作成はこちらから</span>
+							</button>
+						</p>
+					</form>
+		
+		</div>
+	</div>
+	
 </body>
 </html>

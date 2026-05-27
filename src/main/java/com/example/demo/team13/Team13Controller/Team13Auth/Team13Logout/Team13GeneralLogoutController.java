@@ -23,7 +23,7 @@ public class Team13GeneralLogoutController {
         return "team13/Team13General/Team13_Logout";
     }
     
-    @PostMapping("/Team13_General_Logout")
+    @PostMapping("/Team13_General_Logout_Exec")
     public String sendlogout(HttpSession session) {
     	session.invalidate(); 
         return "redirect:/Team13_General_Login";

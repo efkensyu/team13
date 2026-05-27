@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.ofg">
+<link rel="stylesheet" th:href="@{/Team13/Team13css/Team13General.css}">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -8,21 +9,29 @@
 	<div th:replace="~{team13/Team13Header/Team13_Header_General :: General_Header}">
 		
 	</div>
-	<h1>カート商品画面</h1>
-	<p>こちらの商品を追加しました。</p>
-	<th:block th:object="${cartItem}">
-		<p th:text="*{shohin_nm} + ${count} + 個"></p>
-		<img th:src="@{${photo}}">
-	</th:block>
+	
+	<div class="confirm-card">
+		<h2>カート商品画面</h2>
 		
-	<form>
-		<button formmethod="get" th:formaction="@{/Team13_General_Home}">
-			戻る
-		</button>
-		<button formmethod="post" th:formaction="@{/Team13_Cart_Confirm}">
-			確認
-		</button>	
-	</form>
+		<div class="text-center">
+			<p >こちらの商品を追加しました!</p>
+			<th:block th:object="${cartItem}">
+				<h1 th:text="*{shohin_nm} + ${count} + 個"></h1>
+				<img th:src="@{${photo}}">
+			</th:block>
+		</div>
+				
+		<form>
+			<div class="button-area">
+				<button class="back_btn" formmethod="get" th:formaction="@{/Team13_General_Home}">
+					戻る
+				</button>
+				<button class="add_btn" formmethod="post" th:formaction="@{/Team13_Cart_Confirm}">
+					確認
+				</button>
+			</div>	
+		</form>
+	</div>
 	
 </body>
 </html>
