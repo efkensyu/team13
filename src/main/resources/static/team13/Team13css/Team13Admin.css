@@ -264,6 +264,25 @@ body.login {
     text-align: center;
 }
 
+.login-p {
+    position: relative;
+    padding: .5em .7em;
+    border-radius: 10px;
+    background-color: #000ac4;
+    color: #fff;
+}
+
+.login-p::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 30px;
+    width: 0;
+    height: 0;
+    border: 11px solid transparent;
+    border-top: 11px solid #000ac4;
+}
+
 /* 確認画面 */
 .confirm-card {
     width: 600px;
@@ -324,9 +343,11 @@ body.login {
 
 /* 文字に黒い縁取りを付ける */
 .text-stroke {
-    color: white;                     /* 文字の中の色 */
-    -webkit-text-stroke: 0.15px #000ac4;    /* 黒い縁取り */
-    font-weight: 700;
+  color: white;                     /* 文字の中の色 */
+  font-size: 32px;
+  font-weight: 700;                /* 文字色（中身） */
+  -webkit-text-stroke: 0.1px #333;  /* ストローク（縁取り） */
+
 }
 
 /* =========================================================

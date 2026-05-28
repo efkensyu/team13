@@ -14,9 +14,9 @@
 		<h2>カート商品画面</h2>
 		
 		<div class="text-center">
-			<p >こちらの商品を追加しました!</p>
 			<th:block th:object="${cartItem}">
 				<h1 th:text="*{shohin_nm} + ${count} + 個"></h1>
+				追加しました!<br>
 				<img th:src="@{*{shohin_photo}}">
 			</th:block>
 		</div>
@@ -27,7 +27,7 @@
 					戻る
 				</button>
 				<button class="add_btn" formmethod="post" th:formaction="@{/Team13_Cart_Confirm}">
-					確認
+					そのまま購入→
 				</button>
 			</div>	
 		</form>

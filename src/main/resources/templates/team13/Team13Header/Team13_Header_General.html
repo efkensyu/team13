@@ -13,8 +13,15 @@
         </div>
 		<div class="header_right">
 
-			<form><button th:formaction="@{/Team13_Cart}" th:formmethod="post">カート画面</button></form>
-			<form><button th:formaction="@{/Team13_Cart_Confirm}" th:formmethod="post">カート画面</button></form>
+			<form>
+				
+				<button class="cart-button"
+				        th:formaction="@{/Team13_Cart_Confirm}"
+				        th:formmethod="post">
+				    <span>カート画面</span>
+				</button>
+			</form>
+				
 			<a th:href="@{/Team13_General_Home}">ホーム</a>
 			<a th:href="@{/Team13_General_Profile}">ユーザ情報</a>
         </div>	

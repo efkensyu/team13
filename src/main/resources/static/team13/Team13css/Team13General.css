@@ -290,10 +290,12 @@ a.home-link:hover::after {
        font-weight: 700;
    }
 
-   .header_right {
-       display: flex;
-       gap: 2em;
-   }
+   /* 右側のタブ全体 */
+     .header_right {
+         display: flex;
+         align-items: center;
+         gap: 2.5em; /* ← タブ間の余白を少し広げる */
+     }
 
    .header_right a {
        color: white;
@@ -316,6 +318,53 @@ a.home-link:hover::after {
 
    .header_right a:hover::after {
        width: 100%;
+   }
+  
+
+   /* カートボタン */
+   .cart-button {
+       position: relative;
+       width: 180px;
+       height: 50px;
+       border-radius: 6px;
+       border: none;
+       font-size: 1rem;
+       font-weight: 600;
+       background-color: #fff;
+       color: #000;
+       cursor: pointer;
+       overflow: hidden;
+       transition: transform 0.2s ease, box-shadow 0.3s ease;
+       margin-right: 1.5em; /* ← タブとの間に余白を追加 */
+   }
+
+   /* ホバー時のアニメーション */
+   .cart-button:hover {
+       transform: translateY(-3px);
+       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+   }
+
+   /* 押下時 */
+   .cart-button:active {
+       transform: translateY(1px);
+       box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+   }
+
+   /* 矢印アニメーション */
+   .cart-button span::after {
+       display: inline-block;
+       transform: rotate(45deg);
+       width: 6px;
+       height: 6px;
+       margin-left: 10px;
+       border-top: 2px solid #000;
+       border-right: 2px solid #000;
+       content: '';
+       transition: transform 0.3s ease;
+   }
+
+   .cart-button:hover span::after {
+       transform: translateX(4px) rotate(45deg);
    }
 
 /* ログイン画面 */
@@ -397,6 +446,32 @@ body.login {
     font-size: 1.1rem;
     margin: 12px 0;
     color: #333;
+}
+
+.login-p {
+    position: relative;
+    padding: .5em .7em;
+    border-radius: 10px;
+    background-color: #000ac4;
+    color: #fff;
+}
+
+.login-p::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 30px;
+    width: 0;
+    height: 0;
+    border: 11px solid transparent;
+    border-top: 11px solid #000ac4;
+}
+.text-stroke {
+  color: white;                     /* 文字の中の色 */
+  font-size: 32px;
+  font-weight: 700;                /* 文字色（中身） */
+  -webkit-text-stroke: 0.1px #333;  /* ストローク（縁取り） */
+
 }
 
 /* =========================================================

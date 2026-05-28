@@ -16,11 +16,16 @@
 			<div class="text-center">
 				<p>この商品を購入しますか？</p>
 				
+				<p>合計金額 →
+					<span class="stock-count" th:text="${sumPrice}+円"></span>
+				</p>
+				
 					<div class="button-area">
-			            <button class="back_btn" type="submit" name="back"
-			                    th:formaction="@{/Team13_General_Home}" formmethod="post">
-			                ホームへ戻る
-			            </button>
+						<button class="back_btn"
+						        th:formaction="@{/Team13_General_Home}"
+						        formmethod="get">
+						    ホームへ戻る
+						</button>
 	
 			            <button class="add_btn" type="submit" name="complete"
 			                    th:formaction="@{/Team13_Cart_Complete}" formmethod="post">
@@ -35,7 +40,6 @@
 		                <input type="hidden" name="shohin_id" th:value="*{shohin_id}">
 		                <input type="hidden" name="count" th:value="*{shohin_num}">
 		            </th:block>
-					<p th:text="${sumPrice} + 円"></p>
 		        </div>
 				
 		    </div>
