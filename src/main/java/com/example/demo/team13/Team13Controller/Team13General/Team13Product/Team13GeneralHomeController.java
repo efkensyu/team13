@@ -99,12 +99,17 @@ public class Team13GeneralHomeController {
 	@PostMapping(value="/Team13_Cart" ,params="shohin_id")
 	public String send(@RequestParam("shohin_id") String shohin_id, @RequestParam("count") int count,Model model){
 		Team13Shohin cartItem = team13GeneralHomeService.findById(shohin_id);
+		Team13CartInfo cartData = new Team13CartInfo();
 		List<Team13CartInfo> cartList = team13CartService.addCartList(cartItem,count,team13GeneralHomeService.selectPhoto(shohin_id));
-		
+//		cartItem.setShohin_photo(team13GeneralHomeService.selectPhoto(shohin_id));
+		cartData.setShohin_id(shohin_id);
+		cartData.setShohin_nm(cartItem.getShohin_nm());
+		cartData.setShohin_num(count);
+		cartData.setShohin_photo(team13GeneralHomeService.selectPhoto(shohin_id));
+		System.out.println(cartData);
 		team13UserInfoSession.setCartInfo(cartList);
-	    model.addAttribute("cartItem",cartItem);
+		model.addAttribute("cartItem",cartData);
 	    model.addAttribute("count",count);
-	    model.addAttribute("photo", team13GeneralHomeService.selectPhoto(shohin_id));
 	    System.out.println(cartList.getClass());
 	    return "team13/Team13General/Team13_Cart";
 	}

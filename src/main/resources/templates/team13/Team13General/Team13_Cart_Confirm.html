@@ -29,7 +29,7 @@
 			        </div>
 				
 		            <th:block th:each="data:${cartList}" th:object="${data}">
-		                <img th:src="@{*{shohin_photo}}">
+						<img th:src="@{*{shohin_photo}}">
 		                <p th:text="*{shohin_nm}"></p>
 		                <p th:text="|*{shohin_num} 個|"></p>
 		                <input type="hidden" name="shohin_id" th:value="*{shohin_id}">
